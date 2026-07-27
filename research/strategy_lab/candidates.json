@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "updated_at_utc": "2026-07-27T19:20:00Z",
+  "candidates": [
+    {
+      "id": "LAB-001",
+      "name": "H1 Volatility-Compression Breakout",
+      "horizon": "intraday",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 24,
+        "wins": 6,
+        "losses": 18,
+        "win_rate_pct": 25,
+        "profit_factor": 0.424,
+        "total_r": -11.433,
+        "max_drawdown_r": 13.394
+      },
+      "evidence_warning": "Only 400 H1 bars per pair, about 16 calendar days. Not evidence of a durable edge.",
+      "next_action": "Do not tune on this sample. Revisit only on a multi-year dataset as an unchanged benchmark."
+    }
+  ]
+}
