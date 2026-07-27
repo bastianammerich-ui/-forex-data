@@ -1,0 +1,122 @@
+{
+  "version": "LIVE_STRATEGIES_MASTER_V1",
+  "as_of": "2026-07-27",
+  "principles": {
+    "no_silent_rule_changes": true,
+    "new_rule_requires_new_version": true,
+    "use_closed_candles_only": true,
+    "risk_reference_account_eur": 10000,
+    "max_risk_percent_per_trade": 2,
+    "live_research_mode": "shadow_until_oos_and_forward_validation"
+  },
+  "strategies": [
+    {
+      "id": "A_V22_BODYCAP",
+      "name": "A-V2.2 BODYCAP",
+      "status": "PRIMARY_RESEARCH_CANDIDATE",
+      "live_mode": "BLOCKED_BY_HISTORY_DEPTH",
+      "rules_file": "research/A_V22_BODYCAP_SPEC.md",
+      "data_required": {
+        "M15": "enough for EMA30, RSI14, ATR14 and signal history",
+        "H1": "at least ~110 bars for EMA100 + slope + ADX warmup",
+        "H4": "at least ~210 bars for EMA200 + slope warmup"
+      },
+      "current_feed_issue": "forex.json currently has 80 M15, 100 H1 and 80 H4 bars; H4 history is insufficient and H1 is marginal",
+      "action_when_data_ready": "apply frozen rules unchanged to all 7 majors; shadow/forward track first"
+    },
+    {
+      "id": "V3_MEAN_REVERSION",
+      "name": "v3 Mean Reversion",
+      "status": "PRIMARY_RESEARCH_CANDIDATE",
+      "live_mode": "BLOCKED_BY_HISTORY_DEPTH",
+      "rules": "3H BB60/2.0; ADX<=25; RSI long<=30 short>=75; lookback15; ATR buffer0.05; RR4.0; 2% dynamic risk; max one position",
+      "data_required": {
+        "H1": "at least 180 completed H1 bars to reconstruct 60 completed 3H bars; more preferred for indicator warmup"
+      },
+      "current_feed_issue": "forex.json currently has 100 H1 bars",
+      "action_when_data_ready": "apply frozen rules unchanged and track separately"
+    },
+    {
+      "id": "REGIME_BLEND_A_V3",
+      "name": "A-V2.2 + v3 Regime Blend",
+      "status": "HIGH_PRIORITY_TEST",
+      "live_mode": "BLOCKED_UNTIL_COMPONENTS_AVAILABLE",
+      "rules": "A-V2.2 and v3 remain separate engines; no entry-rule mixing; compare portfolio exposure, overlap and drawdown",
+      "action_when_data_ready": "shadow-test portfolio behavior"
+    },
+    {
+      "id": "USD_FACTOR_CONFIRM",
+      "name": "Broad USD Factor Confirmation",
+      "status": "HIGH_PRIORITY_RESEARCH",
+      "live_mode": "NOT_YET_FROZEN_OR_BACKTESTED",
+      "data_required": "synchronized data for all 7 majors",
+      "action_when_ready": "freeze one factor definition, backtest first, then shadow live; do not trade before validation"
+    },
+    {
+      "id": "DAILY_TSMOM",
+      "name": "Daily Multi-Horizon Time-Series Momentum",
+      "status": "HIGH_PRIORITY_DIVERSIFIER",
+      "live_mode": "BLOCKED_BY_LONG_HISTORY_REQUIREMENT",
+      "data_required": "minimum 120+ daily bars technically; 10+ years strongly preferred for research",
+      "action_when_ready": "test frozen 20/60/120-day momentum ensemble with volatility-based risk"
+    },
+    {
+      "id": "CROSS_SECTIONAL_MOM",
+      "name": "Cross-Sectional Currency Momentum",
+      "status": "RESEARCH_QUEUE",
+      "live_mode": "BLOCKED_BY_LONG_HISTORY_REQUIREMENT",
+      "data_required": "synchronized multi-pair daily history; preferably 10+ years",
+      "action_when_ready": "backtest portfolio ranking before any live use"
+    },
+    {
+      "id": "FACTOR_MOMENTUM",
+      "name": "Currency Factor Momentum",
+      "status": "RESEARCH_QUEUE",
+      "live_mode": "NOT_YET_FROZEN_OR_BACKTESTED",
+      "action_when_ready": "freeze price-only USD-factor specification and backtest; later add carry factor with proper data"
+    },
+    {
+      "id": "CARRY_MOMENTUM",
+      "name": "Carry + Momentum Hybrid",
+      "status": "RESEARCH_QUEUE",
+      "live_mode": "BLOCKED_BY_MISSING_CARRY_DATA",
+      "data_required": "historical forward points, interest differentials or broker swaps plus OHLC"
+    },
+    {
+      "id": "MACRO_NEWS_SURPRISE",
+      "name": "Macro-News Surprise Continuation",
+      "status": "RESEARCH_QUEUE",
+      "live_mode": "BLOCKED_BY_MISSING_NEWS_SURPRISE_DATA",
+      "data_required": "timestamped actual vs consensus macro releases plus M1/M5 bid/ask"
+    },
+    {
+      "id": "SESSION_SEASONALITY_FILTER",
+      "name": "Local Trading Hours Seasonality Filter",
+      "status": "SUPPORTING_FILTER_RESEARCH",
+      "live_mode": "DO_NOT_USE_STANDALONE",
+      "action_when_ready": "test only economically predefined sessions/overlaps; avoid arbitrary hourly optimization"
+    },
+    {
+      "id": "SKEW_KURT_MOM",
+      "name": "Skewness/Kurtosis-enhanced Currency Momentum",
+      "status": "LONGER_TERM_RESEARCH",
+      "live_mode": "BLOCKED_BY_SAMPLE_SIZE",
+      "data_required": "broader currency universe and long history"
+    },
+    {
+      "id": "CURRENCY_VALUE_BLEND",
+      "name": "Currency Value + Momentum",
+      "status": "LONGER_TERM_RESEARCH",
+      "live_mode": "BLOCKED_BY_MACRO_DATA",
+      "data_required": "real exchange rates/CPI and other fundamental series with long history"
+    },
+    {
+      "id": "ML_META_FILTER",
+      "name": "ML Meta-Filter",
+      "status": "DEFERRED",
+      "live_mode": "NOT_ALLOWED_YET",
+      "data_required": "hundreds to thousands of clean labeled rule-based signals",
+      "rule": "ML may only accept/reject frozen rule-based signals; it may not invent new trades"
+    }
+  ]
+}
