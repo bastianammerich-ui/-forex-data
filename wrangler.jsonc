@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "forexmajorsupdate",
+  "main": "staging/forex-worker-index.js",
+  "compatibility_date": "2026-07-22",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "FOREX_CACHE",
+      "id": "7271c1d451a743e0abb39b44e92ad249"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "3,17,32,47 * * * *",
+      "2 * * * *",
+      "4 */4 * * *",
+      "6 0 * * *"
+    ]
+  }
+}
