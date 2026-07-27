@@ -1,0 +1,74 @@
+{
+  "candidate_id": "LAB-001",
+  "name": "H1 Volatility-Compression Breakout",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-27T19:03:14.838Z",
+  "available_h1_bars_per_pair": 400,
+  "warning": "Only about 16 calendar days of H1 data; not evidence of an edge.",
+  "assumptions": {
+    "spread": "1.0 pip round-turn approximation",
+    "slippage": "not separately modeled",
+    "same_bar_conflict": "stop first",
+    "risk_unit": "1R per trade; no portfolio sizing"
+  },
+  "aggregate": {
+    "trades": 24,
+    "wins": 6,
+    "losses": 18,
+    "win_rate_pct": 25,
+    "profit_factor": 0.424,
+    "total_r": -11.433,
+    "max_drawdown_r": 13.394
+  },
+  "per_pair": {
+    "EUR/USD": {
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "profit_factor": 0,
+      "total_r": -2.087
+    },
+    "GBP/USD": {
+      "trades": 4,
+      "wins": 0,
+      "losses": 4,
+      "profit_factor": 0,
+      "total_r": -4.273
+    },
+    "USD/JPY": {
+      "trades": 6,
+      "wins": 3,
+      "losses": 3,
+      "profit_factor": 1.345,
+      "total_r": 1.094
+    },
+    "USD/CHF": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "profit_factor": 0,
+      "total_r": -3.213
+    },
+    "USD/CAD": {
+      "trades": 4,
+      "wins": 2,
+      "losses": 2,
+      "profit_factor": 1.027,
+      "total_r": 0.058
+    },
+    "AUD/USD": {
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "profit_factor": 0,
+      "total_r": -2.417
+    },
+    "NZD/USD": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "profit_factor": 0.767,
+      "total_r": -0.595
+    }
+  }
+}
