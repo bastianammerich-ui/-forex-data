@@ -1,0 +1,81 @@
+{
+  "id": "DAVE_CLS_PUBLIC_RULESET_V1",
+  "as_of": "2026-07-27",
+  "status": "PUBLIC_RULE_RECONSTRUCTION_NOT_PRIVATE_EXACT",
+  "creator_current_name": "CLS = Candle Liquidity Sweep",
+  "core_principle": "HTF direction -> ITF range/key level/manipulation -> LTF change in order flow/entry",
+  "canonical_timeframe_alignments": {
+    "short_term": {"trend": "Monthly", "range": "Weekly", "entry": ["H4", "H1"]},
+    "swing": {"trend": "Weekly", "range": "Daily", "entry": ["H1", "M15"]},
+    "day": {"trend": "Daily", "range": "H4", "entry": ["M15", "M5"]},
+    "scalp": {"trend": "H4", "range": "H1", "entry": ["M5", "M1"]}
+  },
+  "bias": {
+    "bullish_continuation": "HTF close above prior high while next key level remains unreached; draw above current high",
+    "bearish_continuation": "mirror: HTF close below prior low while next key level remains unreached; draw below current low",
+    "bearish_reversal": "sweep/wick above prior high then close back below/inside; draw toward lower liquidity",
+    "bullish_reversal": "mirror after sweep below prior low and close back inside"
+  },
+  "range": {
+    "requires_key_level": true,
+    "bearish_manipulation": "wick/sweep above range high into key level",
+    "bearish_invalidation": "same-ITF candle close above range",
+    "bullish_manipulation": "wick/sweep below range low into key level",
+    "bullish_invalidation": "same-ITF candle close below range",
+    "rule": "No manipulation = no trade"
+  },
+  "premium_discount": {
+    "midpoint": 0.5,
+    "long_preference": "discount / lower half",
+    "short_preference": "premium / upper half"
+  },
+  "key_levels": {
+    "preferred": "Order Block / Supply-Demand",
+    "also_publicly_accepted": ["FVG", "IFVG"],
+    "order_block_quality": ["correct premium/discount location", "liquidity raid", "FVG or IFVG associated"]
+  },
+  "model1": {
+    "type": "liquidity sweep -> rejection -> reversal/distribution",
+    "requires_ltf_confirmation_close": true,
+    "confirmation_public_description": ["LTF Order Block created", "close through manipulation/opposing candle(s)", "structure break with close", "engulfing/change in order flow"],
+    "entry": "after confirmation candle closes; never before close",
+    "stop": "beyond manipulation extreme",
+    "target": "50% midpoint of CLS range",
+    "profit_rule": "partial or full close at 50%"
+  },
+  "model2": {
+    "type": "liquidity sweep -> acceptance -> continuation / reload",
+    "precondition": "Model 1/first expansion has played out and HTF bias remains valid",
+    "entry_zone_retracement": [0.618, 0.80],
+    "requires_key_level_in_zone": true,
+    "target": "full CLS range / opposite range side",
+    "public_ambiguities": ["exact Fibonacci anchoring", "protected swing/SL algorithm", "whether LTF CIOD is mandatory in every Model 2 variant"]
+  },
+  "session_notes": {
+    "london_continuation": "Asia manipulation into key level then displacement/CIOD; London retrace and continuation",
+    "london_reversal": "London raids Asia liquidity into HTF key level then M15 order-flow change",
+    "creator_note": "reversal entries suggested after about 10 CET; continuation may occur earlier"
+  },
+  "official_cls_reality_check": {
+    "official_role": "PvP settlement, settlement-risk mitigation, multilateral netting and liquidity management for already-executed FX transactions",
+    "not_officially_supported": ["CLS is a directional market maker", "CLS intentionally causes stop hunts", "specific displacement candles can be causally identified as CLS-created", "Model 1/2 is mechanically caused by settlement cycle"],
+    "research_policy": "validate price-action rules empirically; do not rely on unverified CLS-causality narrative"
+  },
+  "project_recommendation": {
+    "baseline_first": "B1_DAVE_PUBLIC_SWING_M1",
+    "live_feasible_with_current_timeframes": "B2_DAVE_PUBLIC_DAY_M1 after objective range/key-level/CIOD definitions are frozen",
+    "do_not_mix_performance": ["creator MQL5 historical account", "creator current CLS copy rules", "our public mechanical approximation"]
+  },
+  "sources": [
+    "https://www.tradingview.com/chart/BTCUSDT.P/PkQJvVm4-Complete-system-for-Day-Swing-Traders/",
+    "https://www.tradingview.com/chart/GBPUSD/wjRRXQpu-CLS-Model-1-100-Mechanical-Trading-setup/",
+    "https://my.tradingview.com/chart/GBPUSD/eiML0Niy-Dealing-Ranges-Powerful-filter-tool-to-your-trading/",
+    "https://kr.tradingview.com/chart/BTCUSD/LJ69Z8r4-Order-Block-Powerful-Key-level-and-Entry-confirmation/",
+    "https://tw.tradingview.com/chart/BTCUSDT.P/XxzXz7Ll-High-probability-strategies-for-the-London-Session/",
+    "https://www.mql5.com/en/signals/2369911",
+    "https://www.forexfactory.com/thread/1399859-the-cls-lab-strategy-and-mindset",
+    "https://www.cls-group.com/products/settlement/clssettlement/",
+    "https://www.cls-group.com/news/cls-fx-trading-activity-april-2026/",
+    "https://www.cls-group.com/insights/innovation/report-reimagining-same-day-fx-exploring-the-case-for-additional-settlement-cycles-shapingfx-series/"
+  ]
+}
