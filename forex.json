@@ -1,7 +1,7 @@
 {
   "success": true,
   "source": "Twelve Data via Cloudflare Worker",
-  "generated_at_utc": "2026-07-27T00:04:13.616Z",
+  "generated_at_utc": "2026-07-27T00:06:13.650Z",
   "strategy": {
     "account_eur": 10000,
     "max_risk_percent": 2,
@@ -30,7 +30,7 @@
     "15min": {
       "available": true,
       "updated_at_utc": "2026-07-27T00:03:12.691Z",
-      "age_seconds": 60,
+      "age_seconds": 180,
       "stale": false,
       "pairs": {
         "EUR/USD": {
@@ -4042,7 +4042,7 @@
     "1h": {
       "available": true,
       "updated_at_utc": "2026-07-27T00:02:12.865Z",
-      "age_seconds": 120,
+      "age_seconds": 240,
       "stale": false,
       "pairs": {
         "EUR/USD": {
@@ -9034,7 +9034,7 @@
     "4h": {
       "available": true,
       "updated_at_utc": "2026-07-27T00:04:12.649Z",
-      "age_seconds": 0,
+      "age_seconds": 120,
       "stale": false,
       "pairs": {
         "EUR/USD": {
@@ -13045,9 +13045,9 @@
     },
     "1day": {
       "available": true,
-      "updated_at_utc": "2026-07-26T00:06:11.636Z",
-      "age_seconds": 86281,
-      "stale": true,
+      "updated_at_utc": "2026-07-27T00:06:12.697Z",
+      "age_seconds": 0,
+      "stale": false,
       "pairs": {
         "EUR/USD": {
           "meta": {
@@ -13060,11 +13060,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 1.13876,
+              "high": 1.13999,
+              "low": 1.13665,
+              "close": 1.1397
+            },
+            {
               "datetime": "2026-07-26",
               "open": 1.13742,
-              "high": 1.13781,
-              "low": 1.13724,
-              "close": 1.13761
+              "high": 1.14024,
+              "low": 1.13636,
+              "close": 1.13902
             },
             {
               "datetime": "2026-07-25",
@@ -13751,13 +13758,6 @@
               "high": 1.17804,
               "low": 1.17303,
               "close": 1.17416
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 1.17643,
-              "high": 1.17969,
-              "low": 1.17601,
-              "close": 1.17727
             }
           ]
         },
@@ -13772,11 +13772,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 1.33316,
+              "high": 1.33572,
+              "low": 1.33237,
+              "close": 1.33514
+            },
+            {
               "datetime": "2026-07-26",
               "open": 1.33234,
-              "high": 1.33253,
-              "low": 1.33225,
-              "close": 1.33229
+              "high": 1.33429,
+              "low": 1.33166,
+              "close": 1.33313
             },
             {
               "datetime": "2026-07-25",
@@ -14463,13 +14470,6 @@
               "high": 1.35442,
               "low": 1.34763,
               "close": 1.34916
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 1.35183,
-              "high": 1.35371,
-              "low": 1.35128,
-              "close": 1.35261
             }
           ]
         },
@@ -14484,11 +14484,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 163.67026,
+              "high": 163.73459,
+              "low": 163.56192,
+              "close": 163.5777
+            },
+            {
               "datetime": "2026-07-26",
               "open": 163.85403,
-              "high": 163.8843,
-              "low": 163.80889,
-              "close": 163.85585
+              "high": 164.08805,
+              "low": 163.48807,
+              "close": 163.64056
             },
             {
               "datetime": "2026-07-25",
@@ -15175,13 +15182,6 @@
               "high": 159.02361,
               "low": 157.89609,
               "close": 158.79069
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 158.62299,
-              "high": 158.90472,
-              "low": 157.9924,
-              "close": 158.56643
             }
           ]
         },
@@ -15196,11 +15196,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 0.81628,
+              "high": 0.81701,
+              "low": 0.81555,
+              "close": 0.81586
+            },
+            {
               "datetime": "2026-07-26",
               "open": 0.81825,
-              "high": 0.81845,
-              "low": 0.81803,
-              "close": 0.81839
+              "high": 0.81856,
+              "low": 0.8158,
+              "close": 0.8162
             },
             {
               "datetime": "2026-07-25",
@@ -15887,13 +15894,6 @@
               "high": 0.78426,
               "low": 0.77987,
               "close": 0.78164
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 0.78176,
-              "high": 0.78472,
-              "low": 0.7803,
-              "close": 0.78127
             }
           ]
         },
@@ -15908,11 +15908,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 1.40899,
+              "high": 1.40938,
+              "low": 1.40805,
+              "close": 1.40826
+            },
+            {
               "datetime": "2026-07-26",
               "open": 1.40949,
-              "high": 1.40971,
-              "low": 1.40902,
-              "close": 1.40949
+              "high": 1.41138,
+              "low": 1.40812,
+              "close": 1.40892
             },
             {
               "datetime": "2026-07-25",
@@ -16599,13 +16606,6 @@
               "high": 1.37984,
               "low": 1.36747,
               "close": 1.36845
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 1.36921,
-              "high": 1.37603,
-              "low": 1.36788,
-              "close": 1.37295
             }
           ]
         },
@@ -16620,11 +16620,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 0.69926,
+              "high": 0.70068,
+              "low": 0.69901,
+              "close": 0.69972
+            },
+            {
               "datetime": "2026-07-26",
               "open": 0.69829,
-              "high": 0.69856,
-              "low": 0.69771,
-              "close": 0.69835
+              "high": 0.70016,
+              "low": 0.69764,
+              "close": 0.69922
             },
             {
               "datetime": "2026-07-25",
@@ -17311,13 +17318,6 @@
               "high": 0.718,
               "low": 0.71143,
               "close": 0.7126
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 0.71683,
-              "high": 0.71789,
-              "low": 0.71661,
-              "close": 0.7172
             }
           ]
         },
@@ -17332,11 +17332,18 @@
           "candle_count": 100,
           "candles": [
             {
+              "datetime": "2026-07-27",
+              "open": 0.57982,
+              "high": 0.58101,
+              "low": 0.57935,
+              "close": 0.58022
+            },
+            {
               "datetime": "2026-07-26",
               "open": 0.5789,
-              "high": 0.57903,
-              "low": 0.57885,
-              "close": 0.57893
+              "high": 0.58055,
+              "low": 0.57781,
+              "close": 0.5796
             },
             {
               "datetime": "2026-07-25",
@@ -18023,13 +18030,6 @@
               "high": 0.59086,
               "low": 0.58539,
               "close": 0.58605
-            },
-            {
-              "datetime": "2026-04-18",
-              "open": 0.58819,
-              "high": 0.58969,
-              "low": 0.58755,
-              "close": 0.58825
             }
           ]
         }
