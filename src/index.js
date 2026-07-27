@@ -1,3 +1,6 @@
+const SCHEMA_VERSION = "2.0";
+const MAX_INTRABAR_MOVE_RATIO = 0.15;
+
 const PAIRS = [
   "EUR/USD",
   "GBP/USD",
@@ -9,10 +12,10 @@ const PAIRS = [
 ];
 
 const CONFIG = {
-  "15min": { outputsize: 80, ttl: 15 * 60 },
-  "1h":    { outputsize: 100, ttl: 60 * 60 },
-  "4h":    { outputsize: 80, ttl: 4 * 60 * 60 },
-  "1day":  { outputsize: 100, ttl: 12 * 60 * 60 }
+  "15min": { outputsize: 500, ttl: 30 * 60 },
+  "1h":    { outputsize: 400, ttl: 2 * 60 * 60 },
+  "4h":    { outputsize: 300, ttl: 6 * 60 * 60 },
+  "1day":  { outputsize: 300, ttl: 36 * 60 * 60 }
 };
 
 const GITHUB = {
@@ -27,6 +30,11 @@ export default {
     try {
       validateEnvironment(env);
       const url = new URL(request.url);
+      if (url.pathname === "/health") {
+        const market = await readMarketData(env);
+        return json(buildHealth(market));
+      }
+
       const requestedInterval = url.searchParams.get("refresh");
       const historyRequest = url.searchParams.get("history");
       const historyExportRequest = url.searchParams.get("history_export");
@@ -103,11 +111,11 @@ async function runScheduledUpdate(env, cron) {
     console.log(`Scheduled Forex Update: ${interval} | Cron: ${cron}`);
     const result = await refreshOneInterval(env, interval);
     console.log(`Scheduled update ${interval}:`, JSON.stringify(result));
-    if (result.status === "updated") {
+    if (result.status === "updated" && interval === "15min") {
       const market = await readMarketData(env);
       const githubResult = await publishMarketToGitHub(env, market);
       console.log("GitHub publish:", JSON.stringify(githubResult));
-    } else {
+    } else if (result.status !== "updated") {
       console.error(`Update ${interval} fehlgeschlagen:`, JSON.stringify(result));
     }
   } catch (error) {
@@ -223,10 +231,84 @@ function normalizeResponse(raw) {
     if (source.status === "error" || source.code || (source.message && !source.values)) {
       result[pair] = { error: true, message: source.message || "API-Fehler" }; continue;
     }
-    const candles = Array.isArray(source.values) ? source.values.map(candle => ({ datetime: candle.datetime, open: Number(candle.open), high: Number(candle.high), low: Number(candle.low), close: Number(candle.close) })) : [];
-    result[pair] = { meta: source.meta || null, candle_count: candles.length, candles };
+    const normalized = normalizeCandles(Array.isArray(source.values) ? source.values : []);
+    result[pair] = {
+      meta: source.meta || null,
+      candle_count: normalized.candles.length,
+      complete_candle_count: normalized.candles.filter(candle => candle.complete).length,
+      rejected_candle_count: normalized.rejected.length,
+      data_warnings: normalized.rejected.slice(0, 10),
+      candles: normalized.candles
+    };
   }
   return result;
+}
+
+
+function normalizeCandles(values) {
+  const candles = [];
+  const rejected = [];
+
+  values.forEach((candle, index) => {
+    const normalized = {
+      datetime: candle.datetime,
+      open: Number(candle.open),
+      high: Number(candle.high),
+      low: Number(candle.low),
+      close: Number(candle.close),
+      complete: index > 0
+    };
+
+    const reason = validateCandle(normalized);
+    if (reason) {
+      rejected.push({ datetime: normalized.datetime || null, reason });
+      return;
+    }
+    candles.push(normalized);
+  });
+
+  return { candles, rejected };
+}
+
+function validateCandle(candle) {
+  const values = [candle.open, candle.high, candle.low, candle.close];
+  if (!candle.datetime || values.some(value => !Number.isFinite(value) || value <= 0)) return "invalid_ohlc";
+  if (candle.low > candle.high) return "low_above_high";
+  if (candle.high < Math.max(candle.open, candle.close)) return "high_below_body";
+  if (candle.low > Math.min(candle.open, candle.close)) return "low_above_body";
+  if ((candle.high - candle.low) / candle.close > MAX_INTRABAR_MOVE_RATIO) return "extreme_intrabar_move";
+  return null;
+}
+
+function buildHealth(market) {
+  const intervals = {};
+  let healthy = true;
+
+  for (const interval of Object.keys(CONFIG)) {
+    const data = market[interval];
+    const available = Boolean(data?.available);
+    const stale = !available || Boolean(data.stale);
+    if (stale) healthy = false;
+    intervals[interval] = {
+      available,
+      stale,
+      updated_at_utc: data?.updated_at_utc || null,
+      age_seconds: data?.age_seconds ?? null,
+      pair_count: available ? Object.keys(data.pairs || {}).length : 0,
+      rejected_candles: available
+        ? Object.values(data.pairs || {}).reduce((sum, pair) => sum + (pair.rejected_candle_count || 0), 0)
+        : null
+    };
+  }
+
+  return {
+    success: healthy,
+    schema_version: SCHEMA_VERSION,
+    worker: "forexmajorsupdate",
+    checked_at_utc: new Date().toISOString(),
+    status: healthy ? "ok" : "degraded",
+    intervals
+  };
 }
 
 async function readMarketData(env) {
@@ -243,7 +325,16 @@ async function readMarketData(env) {
 
 async function publishMarketToGitHub(env, market) {
   try {
-    const payload = { success: true, source: "Twelve Data via Cloudflare Worker", generated_at_utc: new Date().toISOString(), strategy: getStrategy(), market };
+    const payload = {
+      success: true,
+      schema_version: SCHEMA_VERSION,
+      source: "Twelve Data via Cloudflare Worker",
+      timezone: "Europe/Berlin",
+      generated_at_utc: new Date().toISOString(),
+      quality: buildQualitySummary(market),
+      strategy: getStrategy(),
+      market
+    };
     const content = JSON.stringify(payload, null, 2);
     const apiUrl = `https://api.github.com/repos/${GITHUB.owner}/${GITHUB.repo}/contents/${GITHUB.path}`;
     const existingResponse = await fetch(`${apiUrl}?ref=${encodeURIComponent(GITHUB.branch)}`, { method: "GET", headers: githubHeaders(env.GITHUB_TOKEN) });
@@ -262,6 +353,36 @@ async function publishMarketToGitHub(env, market) {
     console.error("GitHub Export Fehler:", error instanceof Error ? error.message : String(error));
     return { status: "error", error: error instanceof Error ? error.message : String(error) };
   }
+}
+
+
+function buildQualitySummary(market) {
+  let rejectedCandles = 0;
+  let incompleteCandles = 0;
+  const warnings = [];
+
+  for (const [interval, intervalData] of Object.entries(market)) {
+    if (!intervalData?.available) {
+      warnings.push({ interval, warning: "unavailable" });
+      continue;
+    }
+    if (intervalData.stale) warnings.push({ interval, warning: "stale" });
+
+    for (const [pair, pairData] of Object.entries(intervalData.pairs || {})) {
+      rejectedCandles += pairData.rejected_candle_count || 0;
+      incompleteCandles += Math.max(0, (pairData.candle_count || 0) - (pairData.complete_candle_count || 0));
+      if ((pairData.rejected_candle_count || 0) > 0) {
+        warnings.push({ interval, pair, warning: "rejected_candles", count: pairData.rejected_candle_count });
+      }
+    }
+  }
+
+  return {
+    rejected_candles: rejectedCandles,
+    incomplete_candles: incompleteCandles,
+    warning_count: warnings.length,
+    warnings
+  };
 }
 
 function githubHeaders(token) {
