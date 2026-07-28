@@ -25,13 +25,14 @@ jobs:
           ref: main
           fetch-depth: 50
 
-      - name: Build compact per-pair/per-timeframe feeds
+      - name: Build compact strategy-ready feeds
         shell: python
         run: |
           import json
           import pathlib
           import shutil
           import subprocess
+          from datetime import datetime
 
           source_path = pathlib.Path("forex.json")
           if not source_path.exists():
@@ -52,17 +53,45 @@ jobs:
               source_commit = None
 
           market = src.get("market", {})
-          # 220 H1 bars are sufficient to reconstruct >60 completed 3H bars for v3.
-          limits = {
-              "15min": 40,
-              "1h": 220,
-              "4h": 60,
-              "1day": 60,
-          }
+          limits = {"15min": 40, "1h": 80, "3h": 80, "4h": 60, "1day": 60}
 
           pairs = set()
-          for tf in limits:
+          for tf in ("15min", "1h", "4h", "1day"):
               pairs.update(market.get(tf, {}).get("pairs", {}).keys())
+
+          def dt_of(candle):
+              return datetime.strptime(candle["datetime"], "%Y-%m-%d %H:%M:%S")
+
+          def build_h3(pair):
+              h1_tf = market.get("1h", {})
+              pair_block = h1_tf.get("pairs", {}).get(pair)
+              if not pair_block:
+                  return []
+
+              rows = [c for c in pair_block.get("candles", []) if c.get("complete") is True]
+              rows.sort(key=dt_of)
+              buckets = {}
+              for candle in rows:
+                  dt = dt_of(candle)
+                  start = dt.replace(hour=(dt.hour // 3) * 3, minute=0, second=0)
+                  buckets.setdefault(start, []).append((dt, candle))
+
+              h3 = []
+              for start in sorted(buckets):
+                  items = sorted(buckets[start], key=lambda x: x[0])
+                  offsets = [int((dt - start).total_seconds() // 3600) for dt, _ in items]
+                  if len(items) != 3 or offsets != [0, 1, 2]:
+                      continue
+                  candles = [c for _, c in items]
+                  h3.append({
+                      "datetime": start.strftime("%Y-%m-%d %H:%M:%S"),
+                      "open": candles[0]["open"],
+                      "high": max(c["high"] for c in candles),
+                      "low": min(c["low"] for c in candles),
+                      "close": candles[-1]["close"],
+                      "complete": True,
+                  })
+              return list(reversed(h3))[:limits["3h"]]
 
           outdir = pathlib.Path("ai_feed")
           if outdir.exists():
@@ -74,20 +103,15 @@ jobs:
               files[pair] = {}
               safe_pair = pair.replace("/", "")
 
-              for tf, limit in limits.items():
+              for tf in ("15min", "1h", "4h", "1day"):
                   tf_block = market.get(tf, {})
                   pair_block = tf_block.get("pairs", {}).get(pair)
                   if not pair_block:
                       continue
-
-                  complete = [
-                      candle for candle in pair_block.get("candles", [])
-                      if candle.get("complete") is True
-                  ][:limit]
-
+                  complete = [c for c in pair_block.get("candles", []) if c.get("complete") is True][:limits[tf]]
                   payload = {
                       "success": True,
-                      "schema_version": "ai-2.0",
+                      "schema_version": "ai-3.0",
                       "generated_at_utc": src.get("generated_at_utc"),
                       "source_commit": source_commit,
                       "pair": pair,
@@ -96,20 +120,37 @@ jobs:
                       "age_seconds": tf_block.get("age_seconds"),
                       "stale": tf_block.get("stale"),
                       "meta": pair_block.get("meta", {}),
-                      "complete_candle_count_source": pair_block.get("complete_candle_count"),
                       "candles": complete,
                   }
-
                   filename = f"{safe_pair}_{tf}.json"
-                  (outdir / filename).write_text(
-                      json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-                      encoding="utf-8",
-                  )
+                  (outdir / filename).write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
                   files[pair][tf] = f"ai_feed/{filename}"
+
+              h3 = build_h3(pair)
+              if h3:
+                  h1_tf = market.get("1h", {})
+                  h1_pair = h1_tf.get("pairs", {}).get(pair, {})
+                  payload = {
+                      "success": True,
+                      "schema_version": "ai-3.0",
+                      "generated_at_utc": src.get("generated_at_utc"),
+                      "source_commit": source_commit,
+                      "pair": pair,
+                      "timeframe": "3h",
+                      "derived_from": "1h",
+                      "updated_at_utc": h1_tf.get("updated_at_utc"),
+                      "age_seconds": h1_tf.get("age_seconds"),
+                      "stale": h1_tf.get("stale"),
+                      "meta": {**h1_pair.get("meta", {}), "interval": "3h"},
+                      "candles": h3,
+                  }
+                  filename = f"{safe_pair}_3h.json"
+                  (outdir / filename).write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+                  files[pair]["3h"] = f"ai_feed/{filename}"
 
           index = {
               "success": True,
-              "schema_version": "ai-2.0",
+              "schema_version": "ai-3.0",
               "generated_at_utc": src.get("generated_at_utc"),
               "source_commit": source_commit,
               "pairs": sorted(pairs),
@@ -118,10 +159,7 @@ jobs:
               "strategy": src.get("strategy", {}),
               "quality": src.get("quality", {}),
           }
-          (outdir / "index.json").write_text(
-              json.dumps(index, ensure_ascii=False, separators=(",", ":")),
-              encoding="utf-8",
-          )
+          (outdir / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
       - name: Commit AI feed when changed
         shell: bash
