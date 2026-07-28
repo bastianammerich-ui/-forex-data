@@ -1,0 +1,126 @@
+name: Build AI Forex Feed
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - forex.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-ai-forex-feed
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Build compact per-pair feeds
+        shell: python
+        run: |
+          import json
+          import os
+          import pathlib
+          import shutil
+
+          source_path = pathlib.Path("forex.json")
+          if not source_path.exists():
+              raise SystemExit("forex.json not found")
+
+          with source_path.open("r", encoding="utf-8") as fh:
+              src = json.load(fh)
+
+          if not src.get("success"):
+              raise SystemExit("forex.json reports success=false")
+
+          market = src.get("market", {})
+          # Enough history for H1/M15 structure, Dave/CLS context and
+          # v3 reconstruction (60 x 3H requires at least 180 H1 bars).
+          limits = {
+              "15min": 120,
+              "1h": 240,
+              "4h": 120,
+              "1day": 120,
+          }
+
+          pairs = set()
+          for tf in limits:
+              pairs.update(market.get(tf, {}).get("pairs", {}).keys())
+
+          outdir = pathlib.Path("ai_feed")
+          if outdir.exists():
+              shutil.rmtree(outdir)
+          outdir.mkdir(parents=True, exist_ok=True)
+
+          index = {
+              "success": True,
+              "schema_version": "ai-1.0",
+              "generated_at_utc": src.get("generated_at_utc"),
+              "source_commit": os.environ.get("GITHUB_SHA"),
+              "pairs": sorted(pairs),
+              "limits": limits,
+              "strategy": src.get("strategy", {}),
+              "quality": src.get("quality", {}),
+          }
+          (outdir / "index.json").write_text(
+              json.dumps(index, ensure_ascii=False, separators=(",", ":")),
+              encoding="utf-8",
+          )
+
+          for pair in sorted(pairs):
+              payload = {
+                  "success": True,
+                  "schema_version": "ai-1.0",
+                  "generated_at_utc": src.get("generated_at_utc"),
+                  "source_commit": os.environ.get("GITHUB_SHA"),
+                  "pair": pair,
+                  "timeframes": {},
+              }
+
+              for tf, limit in limits.items():
+                  tf_block = market.get(tf, {})
+                  pair_block = tf_block.get("pairs", {}).get(pair)
+                  if not pair_block:
+                      continue
+
+                  complete = [
+                      candle for candle in pair_block.get("candles", [])
+                      if candle.get("complete") is True
+                  ][:limit]
+
+                  payload["timeframes"][tf] = {
+                      "updated_at_utc": tf_block.get("updated_at_utc"),
+                      "age_seconds": tf_block.get("age_seconds"),
+                      "stale": tf_block.get("stale"),
+                      "meta": pair_block.get("meta", {}),
+                      "complete_candle_count_source": pair_block.get("complete_candle_count"),
+                      "candles": complete,
+                  }
+
+              safe_name = pair.replace("/", "") + ".json"
+              (outdir / safe_name).write_text(
+                  json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+                  encoding="utf-8",
+              )
+
+      - name: Commit AI feed when changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai_feed
+          if git diff --cached --quiet; then
+            echo "No AI feed changes"
+            exit 0
+          fi
+          git commit -m "Update AI Forex Feed"
+          git push
