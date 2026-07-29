@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "updated_at_utc": "2026-07-29T12:12:00Z",
+  "reference_account_eur": 10000,
+  "open_trades": [
+    {
+      "id": "A_USDCHF_BUY_20260729_1135",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CHF",
+      "side": "BUY",
+      "status": "OPEN",
+      "entry": 0.81939,
+      "stop_loss": 0.81875,
+      "take_profit": 0.82045,
+      "lots": 2.95,
+      "opened_at_local": "2026-07-29T11:35:28+02:00",
+      "setup_type": "breakout_retest",
+      "risk_model": "max_2_percent_reference_account",
+      "confirmed_execution": true,
+      "notes": "User-confirmed live execution via MT5 screenshot. Track until SL/TP/manual close is confirmed."
+    }
+  ],
+  "closed_trades": [
+    {
+      "id": "A_USDCAD_SELL_20260729_0828",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CAD",
+      "side": "SELL",
+      "status": "CLOSED",
+      "entry": 1.40911,
+      "exit": 1.40955,
+      "lots": 4.0,
+      "opened_at_local": "2026-07-29T08:28:12+02:00",
+      "result": "LOSS",
+      "result_r": -1.0,
+      "realized_pnl": -124.86,
+      "realized_pnl_currency": "EUR",
+      "confirmed_execution": true,
+      "notes": "User-confirmed MT5 history screenshot; SL hit."
+    }
+  ],
+  "strategy_stats": {
+    "A": {
+      "strategy_name": "ChatGPT H1/M15",
+      "closed_trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "break_even": 0,
+      "sum_r": -1.0,
+      "known_realized_pnl_eur": -124.86,
+      "open_trades": 1
+    },
+    "B": {
+      "strategy_name": "Dave/CLS B1_DAVE_PUBLIC_SWING_M1",
+      "closed_trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "break_even": 0,
+      "sum_r": 0.0,
+      "known_realized_pnl_eur": 0.0,
+      "open_trades": 0
+    },
+    "C": {
+      "strategy_name": "v3 Mean Reversion frozen",
+      "closed_trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "break_even": 0,
+      "sum_r": 0.0,
+      "known_realized_pnl_eur": 0.0,
+      "open_trades": 0
+    }
+  },
+  "rules": {
+    "only_user_confirmed_live_entries_are_added_to_open_trades": true,
+    "close_trade_only_when_exit_is_confirmed_by_market_data_or_user_execution": true,
+    "remove_from_open_trades_after_close_and_append_to_closed_trades": true,
+    "keep_strategy_statistics_strictly_separate": true
+  }
+}
