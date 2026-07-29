@@ -1,7 +1,8 @@
 {
-  "schema_version": "1.0",
-  "updated_at_utc": "2026-07-29T12:12:00Z",
+  "schema_version": "1.1",
+  "updated_at_utc": "2026-07-29T12:15:06Z",
   "reference_account_eur": 10000,
+  "live_account_currency": "USD",
   "open_trades": [
     {
       "id": "A_USDCHF_BUY_20260729_1135",
@@ -23,6 +24,88 @@
   ],
   "closed_trades": [
     {
+      "id": "A_USDCHF_BUY_20260723_1451",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CHF",
+      "side": "BUY",
+      "status": "CLOSED",
+      "entry": 0.81698,
+      "exit": 0.81560,
+      "stop_loss": 0.81560,
+      "take_profit": 0.81920,
+      "lots": 1.15,
+      "opened_at_local": "2026-07-23T14:51:20+02:00",
+      "result": "LOSS",
+      "result_r": -1.0,
+      "realized_pnl": -194.58,
+      "realized_pnl_currency": "USD",
+      "confirmed_execution": true,
+      "setup_type": "trend_pullback_confirmation",
+      "notes": "Forward-Test Trade #1; user MT5 history confirms exit at configured SL."
+    },
+    {
+      "id": "A_USDCHF_BUY_20260724_1411",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CHF",
+      "side": "BUY",
+      "status": "CLOSED",
+      "entry": 0.81779,
+      "exit": 0.81650,
+      "stop_loss": 0.81650,
+      "take_profit": 0.81970,
+      "lots": 1.70,
+      "opened_at_local": "2026-07-24T14:11:03+02:00",
+      "result": "LOSS",
+      "result_r": -1.0,
+      "realized_pnl": -268.59,
+      "realized_pnl_currency": "USD",
+      "confirmed_execution": true,
+      "setup_type": "breakout_retest",
+      "notes": "Previously classified as our Strategy A breakout_retest; user MT5 history confirms exit at configured SL."
+    },
+    {
+      "id": "A_USDCHF_SELL_20260727_0652",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CHF",
+      "side": "SELL",
+      "status": "CLOSED",
+      "entry": 0.81515,
+      "exit": 0.81555,
+      "stop_loss": 0.81555,
+      "take_profit": 0.81385,
+      "lots": 3.50,
+      "opened_at_local": "2026-07-27T06:52:43+02:00",
+      "result": "LOSS",
+      "result_r": -1.0,
+      "realized_pnl": -171.66,
+      "realized_pnl_currency": "USD",
+      "confirmed_execution": true,
+      "notes": "Strategy A signal; trade had reached substantial unrealized profit earlier, but MT5 history confirms final SL loss."
+    },
+    {
+      "id": "A_USDCAD_BUY_20260727_1319",
+      "strategy": "A",
+      "strategy_name": "ChatGPT H1/M15",
+      "pair": "USD/CAD",
+      "side": "BUY",
+      "status": "CLOSED",
+      "entry": 1.41045,
+      "exit": 1.41010,
+      "stop_loss": 1.41010,
+      "take_profit": 1.41180,
+      "lots": 5.30,
+      "opened_at_local": "2026-07-27T13:19:55+02:00",
+      "result": "LOSS",
+      "result_r": -1.0,
+      "realized_pnl": -131.55,
+      "realized_pnl_currency": "USD",
+      "confirmed_execution": true,
+      "notes": "Explicit Strategy A USD/CAD BUY signal; actual fill was below planned entry zone; MT5 history confirms SL loss."
+    },
+    {
       "id": "A_USDCAD_SELL_20260729_0828",
       "strategy": "A",
       "strategy_name": "ChatGPT H1/M15",
@@ -31,12 +114,13 @@
       "status": "CLOSED",
       "entry": 1.40911,
       "exit": 1.40955,
-      "lots": 4.0,
+      "stop_loss": 1.40955,
+      "lots": 4.00,
       "opened_at_local": "2026-07-29T08:28:12+02:00",
       "result": "LOSS",
       "result_r": -1.0,
       "realized_pnl": -124.86,
-      "realized_pnl_currency": "EUR",
+      "realized_pnl_currency": "USD",
       "confirmed_execution": true,
       "notes": "User-confirmed MT5 history screenshot; SL hit."
     }
@@ -44,12 +128,12 @@
   "strategy_stats": {
     "A": {
       "strategy_name": "ChatGPT H1/M15",
-      "closed_trades": 1,
+      "closed_trades": 5,
       "wins": 0,
-      "losses": 1,
+      "losses": 5,
       "break_even": 0,
-      "sum_r": -1.0,
-      "known_realized_pnl_eur": -124.86,
+      "sum_r": -5.0,
+      "known_realized_pnl_usd": -891.44,
       "open_trades": 1
     },
     "B": {
@@ -59,7 +143,7 @@
       "losses": 0,
       "break_even": 0,
       "sum_r": 0.0,
-      "known_realized_pnl_eur": 0.0,
+      "known_realized_pnl_usd": 0.0,
       "open_trades": 0
     },
     "C": {
@@ -69,14 +153,24 @@
       "losses": 0,
       "break_even": 0,
       "sum_r": 0.0,
-      "known_realized_pnl_eur": 0.0,
+      "known_realized_pnl_usd": 0.0,
       "open_trades": 0
     }
+  },
+  "account_history_snapshot": {
+    "captured_at_local": "2026-07-29T14:13:00+02:00",
+    "deposit": 100000.00,
+    "profit": -891.44,
+    "balance": 99108.56,
+    "currency": "USD",
+    "closed_trade_count": 5,
+    "source": "user_provided_mt5_history_screenshot"
   },
   "rules": {
     "only_user_confirmed_live_entries_are_added_to_open_trades": true,
     "close_trade_only_when_exit_is_confirmed_by_market_data_or_user_execution": true,
     "remove_from_open_trades_after_close_and_append_to_closed_trades": true,
-    "keep_strategy_statistics_strictly_separate": true
+    "keep_strategy_statistics_strictly_separate": true,
+    "do_not_infer_strategy_for_undocumented_trades": true
   }
 }
