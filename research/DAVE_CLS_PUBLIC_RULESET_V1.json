@@ -1,6 +1,6 @@
 {
   "id": "DAVE_CLS_PUBLIC_RULESET_V1",
-  "as_of": "2026-07-27",
+  "as_of": "2026-07-29",
   "status": "PUBLIC_RULE_RECONSTRUCTION_NOT_PRIVATE_EXACT",
   "creator_current_name": "CLS = Candle Liquidity Sweep",
   "core_principle": "HTF direction -> ITF range/key level/manipulation -> LTF change in order flow/entry",
@@ -51,6 +51,31 @@
     "target": "full CLS range / opposite range side",
     "public_ambiguities": ["exact Fibonacci anchoring", "protected swing/SL algorithm", "whether LTF CIOD is mandatory in every Model 2 variant"]
   },
+  "divergence_confirmation": {
+    "scope": "EURUSD + GBPUSD correlated-pair confirmation for the 250-trade research sprint",
+    "validity": [
+      "The two correlated pairs disagree at a comparable swing high or low",
+      "One pair takes liquidity while the other does not confirm",
+      "The event occurs at a pre-marked location, not a hindsight level",
+      "Divergence confirms the idea; Model 1 supplies the trade structure"
+    ],
+    "hard_rule": "Divergence is confirmation only. No manipulation and no valid Model 1 means no trade.",
+    "research_integrity": [
+      "Stop, target, and entry-pair rules remain fixed throughout the sample",
+      "Historical periods are consecutive or selected before testing",
+      "Do not count divergence without Model 1 confirmation as a trade"
+    ],
+    "minimum_log_fields": [
+      "date", "pair_traded", "session", "HTF_bias", "location", "bullish_or_bearish_divergence", "pair_that_swept", "model1_confirmed", "entry", "stop", "target", "result_r", "screenshot", "rule_followed", "lesson"
+    ]
+  },
+  "recent_public_example": {
+    "date_observed": "2026-07-29",
+    "pair": "GBPUSD",
+    "label": "Daily / Weekly CLS - Model 1",
+    "source_support": "User-provided CLS Lab screenshot states that a new CLS Range has been created and a Long Model 1 setup is being sought after manipulation into the Key Level.",
+    "rule_confirmation": "Supports the existing swing sequence Weekly direction -> Daily CLS range/key level -> manipulation -> Model 1 confirmation; it does not support divergence as a standalone entry trigger."
+  },
   "session_notes": {
     "london_continuation": "Asia manipulation into key level then displacement/CIOD; London retrace and continuation",
     "london_reversal": "London raids Asia liquidity into HTF key level then M15 order-flow change",
@@ -72,10 +97,14 @@
     "https://my.tradingview.com/chart/GBPUSD/eiML0Niy-Dealing-Ranges-Powerful-filter-tool-to-your-trading/",
     "https://kr.tradingview.com/chart/BTCUSD/LJ69Z8r4-Order-Block-Powerful-Key-level-and-Entry-confirmation/",
     "https://tw.tradingview.com/chart/BTCUSDT.P/XxzXz7Ll-High-probability-strategies-for-the-London-Session/",
+    "https://www.tradingview.com/chart/GBPUSD/NXxXZ4Pu-GBPUSD-Daily-Weekly-CLS-Model-1/",
     "https://www.mql5.com/en/signals/2369911",
     "https://www.forexfactory.com/thread/1399859-the-cls-lab-strategy-and-mindset",
     "https://www.cls-group.com/products/settlement/clssettlement/",
     "https://www.cls-group.com/news/cls-fx-trading-activity-april-2026/",
     "https://www.cls-group.com/insights/innovation/report-reimagining-same-day-fx-exploring-the-case-for-additional-settlement-cycles-shapingfx-series/"
+  ],
+  "user_supplied_links_pending_rule_extraction": [
+    "https://www.tradingview.com/chart/XAUUSD/GzFadZcv-Trading-Rewards-Survival-Not-Excitement/"
   ]
 }
