@@ -1,14 +1,22 @@
 {
   "id": "DAVE_CLS_PUBLIC_RULESET_V1",
-  "as_of": "2026-07-29",
+  "as_of": "2026-07-30",
   "status": "PUBLIC_RULE_RECONSTRUCTION_NOT_PRIVATE_EXACT",
   "creator_current_name": "CLS = Candle Liquidity Sweep",
   "core_principle": "HTF direction -> ITF range/key level/manipulation -> LTF change in order flow/entry",
-  "canonical_timeframe_alignments": {
-    "short_term": {"trend": "Monthly", "range": "Weekly", "entry": ["H4", "H1"]},
-    "swing": {"trend": "Weekly", "range": "Daily", "entry": ["H1", "M15"]},
-    "day": {"trend": "Daily", "range": "H4", "entry": ["M15", "M5"]},
-    "scalp": {"trend": "H4", "range": "H1", "entry": ["M5", "M1"]}
+  "project_baseline_alignment": {
+    "id": "B1_DAVE_PUBLIC_SWING_M1",
+    "trend": "Weekly",
+    "range": "Daily",
+    "entry": ["H1", "M15"],
+    "note": "Project-specific frozen swing implementation. Keep separate from the creator's broader public timeframe-sequence examples."
+  },
+  "creator_public_timeframe_sequence": {
+    "Monthly": ["Daily", "H4"],
+    "Weekly": ["H4", "H1"],
+    "Daily": ["H1", "M15"],
+    "H4": ["M15", "M5"],
+    "note": "Public Dealing Range / Order Block guidance: use HTF for range/key level and LTF for profiling/entry confirmation; the first LTF listed is the main sequence and the second may be used to scale lower."
   },
   "bias": {
     "bullish_continuation": "HTF close above prior high while next key level remains unreached; draw above current high",
@@ -18,26 +26,49 @@
   },
   "range": {
     "requires_key_level": true,
-    "bearish_manipulation": "wick/sweep above range high into key level",
-    "bearish_invalidation": "same-ITF candle close above range",
-    "bullish_manipulation": "wick/sweep below range low into key level",
-    "bullish_invalidation": "same-ITF candle close below range",
-    "rule": "No manipulation = no trade"
+    "dealing_range_public_definition": "A dealing range forms when price takes both a swing high and a swing low, followed by a clear expansion move; that expansion swing becomes the dealing range.",
+    "bearish_manipulation": "liquidity sweep above range high into a key level followed by rejection",
+    "bearish_invalidation": "same-ITF candle close above range / failure to close back inside after manipulation",
+    "bullish_manipulation": "liquidity sweep below range low into a key level followed by rejection",
+    "bullish_invalidation": "same-ITF candle close below range / failure to close back inside after manipulation",
+    "hard_rule": "No manipulation = no trade"
   },
   "premium_discount": {
     "midpoint": 0.5,
     "long_preference": "discount / lower half",
-    "short_preference": "premium / upper half"
+    "short_preference": "premium / upper half",
+    "public_filter": "Do not enter from the wrong half of the dealing range merely because a key level exists."
   },
   "key_levels": {
     "preferred": "Order Block / Supply-Demand",
     "also_publicly_accepted": ["FVG", "IFVG"],
-    "order_block_quality": ["correct premium/discount location", "liquidity raid", "FVG or IFVG associated"]
+    "order_block_quality": [
+      "correct premium/discount location",
+      "liquidity raid",
+      "FVG or IFVG associated"
+    ],
+    "public_ob_definition": "Last bullish or bearish candle before a strong market move; used either as HTF key level or LTF entry confirmation.",
+    "entry_confirmation_close": "For LTF OB confirmation, wait until candles close above/below the last opposing candle or consecutive opposing candles."
   },
   "model1": {
-    "type": "liquidity sweep -> rejection -> reversal/distribution",
+    "type": "liquidity sweep -> rejection -> close back inside range -> change in order flow -> reversal/distribution",
+    "required_components_public": [
+      "clearly defined CLS range",
+      "strong key level around/outside the range",
+      "correct premium/discount positioning",
+      "liquidity manipulation outside the range",
+      "close back inside the range after manipulation",
+      "valid lower-timeframe order block / change in order flow",
+      "alignment with higher-timeframe bias"
+    ],
+    "session_pattern_public_example": "Asia accumulation can precede London manipulation; entry comes after proof the raid is finished, not during the raid.",
     "requires_ltf_confirmation_close": true,
-    "confirmation_public_description": ["LTF Order Block created", "close through manipulation/opposing candle(s)", "structure break with close", "engulfing/change in order flow"],
+    "confirmation_public_description": [
+      "LTF Order Block created",
+      "close through manipulation/opposing candle(s)",
+      "structure break with close",
+      "engulfing/change in order flow / CIOD"
+    ],
     "entry": "after confirmation candle closes; never before close",
     "stop": "beyond manipulation extreme",
     "target": "50% midpoint of CLS range",
@@ -49,7 +80,12 @@
     "entry_zone_retracement": [0.618, 0.80],
     "requires_key_level_in_zone": true,
     "target": "full CLS range / opposite range side",
-    "public_ambiguities": ["exact Fibonacci anchoring", "protected swing/SL algorithm", "whether LTF CIOD is mandatory in every Model 2 variant"]
+    "public_ambiguities": [
+      "exact Fibonacci anchoring",
+      "protected swing/SL algorithm",
+      "whether LTF CIOD is mandatory in every Model 2 variant"
+    ],
+    "separation_rule": "Do not mix Model 2 logic into B1_DAVE_PUBLIC_SWING_M1."
   },
   "divergence_confirmation": {
     "scope": "EURUSD + GBPUSD correlated-pair confirmation for the 250-trade research sprint",
@@ -69,40 +105,75 @@
       "date", "pair_traded", "session", "HTF_bias", "location", "bullish_or_bearish_divergence", "pair_that_swept", "model1_confirmed", "entry", "stop", "target", "result_r", "screenshot", "rule_followed", "lesson"
     ]
   },
+  "session_notes": {
+    "asia": "Treat Asia primarily as setup/accumulation context; do not enter the liquidity raid itself.",
+    "london_continuation": "If Asia already manipulated into a key level and displaced with CIOD/OB before London, London can retrace into a premium/discount LTF key level and continue.",
+    "london_reversal": "If Asia consolidates near an HTF key level, London can raid Asia liquidity into that level; require M15 order-flow change/OB before entry.",
+    "reversal_invalidation": "London manipulation extreme",
+    "continuation_invalidation": "Asia manipulation extreme",
+    "public_high_probability_filters": [
+      "recent reaction from Daily/H4 key level",
+      "visually consolidating Asia range smaller than about 40 pips",
+      "clean visual candle range",
+      "higher-timeframe key level present",
+      "clean higher-timeframe draw on liquidity"
+    ],
+    "public_low_probability_filters": [
+      "avoid longs after 3 consecutive bullish daily candles",
+      "avoid shorts after 3 consecutive bearish daily candles",
+      "avoid after FOMC extreme-range event",
+      "avoid immediately ahead of NFP or CPI",
+      "avoid multiple high/medium-impact-news environments",
+      "avoid Asia range trending or larger than about 40 pips",
+      "avoid when Asia is not visually consolidating",
+      "avoid absence of a usable candle range"
+    ]
+  },
   "recent_public_example": {
     "date_observed": "2026-07-29",
     "pair": "GBPUSD",
     "label": "Daily / Weekly CLS - Model 1",
-    "source_support": "User-provided CLS Lab screenshot states that a new CLS Range has been created and a Long Model 1 setup is being sought after manipulation into the Key Level.",
-    "rule_confirmation": "Supports the existing swing sequence Weekly direction -> Daily CLS range/key level -> manipulation -> Model 1 confirmation; it does not support divergence as a standalone entry trigger."
-  },
-  "session_notes": {
-    "london_continuation": "Asia manipulation into key level then displacement/CIOD; London retrace and continuation",
-    "london_reversal": "London raids Asia liquidity into HTF key level then M15 order-flow change",
-    "creator_note": "reversal entries suggested after about 10 CET; continuation may occur earlier"
+    "source_support": "User-provided CLS Lab before/after screenshots show a Long Model 1 thesis around Weekly/Daily CLS context followed by bullish expansion.",
+    "rule_confirmation": "Supports manipulation/key-level -> order-flow-change -> Model 1 sequence. SMT is treated as confirmation, not as standalone entry logic."
   },
   "official_cls_reality_check": {
     "official_role": "PvP settlement, settlement-risk mitigation, multilateral netting and liquidity management for already-executed FX transactions",
-    "not_officially_supported": ["CLS is a directional market maker", "CLS intentionally causes stop hunts", "specific displacement candles can be causally identified as CLS-created", "Model 1/2 is mechanically caused by settlement cycle"],
-    "research_policy": "validate price-action rules empirically; do not rely on unverified CLS-causality narrative"
+    "not_officially_supported": [
+      "CLS is a directional market maker",
+      "CLS intentionally causes stop hunts",
+      "specific displacement candles can be causally identified as CLS-created",
+      "Model 1/2 is mechanically caused by settlement cycle"
+    ],
+    "research_policy": "Validate price-action rules empirically; do not rely on unverified CLS-causality narrative."
   },
+  "implementation_gaps_for_automation": [
+    "objective algorithm for identifying a CLS candle/range from OHLC alone",
+    "objective comparable-swing matching for EURUSD/GBPUSD SMT",
+    "exact key-level zone boundaries when multiple OB/FVG candidates overlap",
+    "exact CIOD algorithm for consecutive opposing candles",
+    "session timezone/DST handling",
+    "whether every B1 swing trade requires Asia/London session structure or whether this is only one public execution pattern"
+  ],
   "project_recommendation": {
     "baseline_first": "B1_DAVE_PUBLIC_SWING_M1",
-    "live_feasible_with_current_timeframes": "B2_DAVE_PUBLIC_DAY_M1 after objective range/key-level/CIOD definitions are frozen",
-    "do_not_mix_performance": ["creator MQL5 historical account", "creator current CLS copy rules", "our public mechanical approximation"]
+    "do_not_change_live_stats_from_research": true,
+    "do_not_mix_performance": [
+      "creator historical results",
+      "creator current CLS copy rules",
+      "our public mechanical approximation"
+    ]
   },
   "sources": [
-    "https://www.tradingview.com/chart/BTCUSDT.P/PkQJvVm4-Complete-system-for-Day-Swing-Traders/",
     "https://www.tradingview.com/chart/GBPUSD/wjRRXQpu-CLS-Model-1-100-Mechanical-Trading-setup/",
-    "https://my.tradingview.com/chart/GBPUSD/eiML0Niy-Dealing-Ranges-Powerful-filter-tool-to-your-trading/",
-    "https://kr.tradingview.com/chart/BTCUSD/LJ69Z8r4-Order-Block-Powerful-Key-level-and-Entry-confirmation/",
-    "https://tw.tradingview.com/chart/BTCUSDT.P/XxzXz7Ll-High-probability-strategies-for-the-London-Session/",
+    "https://www.tradingview.com/chart/GBPUSD/eiML0Niy-Dealing-Ranges-Powerful-filter-tool-to-your-trading/",
+    "https://tr.tradingview.com/chart/BTCUSD/LJ69Z8r4-Order-Block-Powerful-Key-level-and-Entry-confirmation/",
+    "https://www.tradingview.com/chart/EURUSD/biqplj21-Understand-Asia-Session-Conquer-London-Setups/",
+    "https://www.tradingview.com/u/David_Perk/page-19/",
+    "https://www.tradingview.com/u/David_Perk/page-27/",
     "https://www.tradingview.com/chart/GBPUSD/NXxXZ4Pu-GBPUSD-Daily-Weekly-CLS-Model-1/",
     "https://www.mql5.com/en/signals/2369911",
     "https://www.forexfactory.com/thread/1399859-the-cls-lab-strategy-and-mindset",
-    "https://www.cls-group.com/products/settlement/clssettlement/",
-    "https://www.cls-group.com/news/cls-fx-trading-activity-april-2026/",
-    "https://www.cls-group.com/insights/innovation/report-reimagining-same-day-fx-exploring-the-case-for-additional-settlement-cycles-shapingfx-series/"
+    "https://www.cls-group.com/products/settlement/clssettlement/"
   ],
   "user_supplied_links_pending_rule_extraction": [
     "https://www.tradingview.com/chart/XAUUSD/GzFadZcv-Trading-Rewards-Survival-Not-Excitement/"
