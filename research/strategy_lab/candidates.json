@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-27T19:20:00Z",
+  "updated_at_utc": "2026-07-31T20:03:53Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -20,6 +20,25 @@
       },
       "evidence_warning": "Only 400 H1 bars per pair, about 16 calendar days. Not evidence of a durable edge.",
       "next_action": "Do not tune on this sample. Revisit only on a multi-year dataset as an unchanged benchmark."
+    },
+    {
+      "id": "LAB-002",
+      "name": "H4 EMA Pullback Continuation",
+      "horizon": "swing",
+      "risk_profile": "low",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 21,
+        "wins": 3,
+        "losses": 18,
+        "win_rate_pct": 14.29,
+        "profit_factor": 0.268,
+        "total_r": -12.352,
+        "max_drawdown_r": 12.352
+      },
+      "evidence_warning": "Only 300 H4 bars per pair, about 50 calendar days. Not evidence of a durable edge.",
+      "next_action": "Do not tune on this short sample. Preserve unchanged as a benchmark and move to a different strategy family."
     }
   ]
 }
