@@ -1,0 +1,223 @@
+{
+  "audit_id": "LAB-007-R1",
+  "candidate_id": "LAB-007",
+  "audit_type": "locked-rule robustness audit",
+  "source_result": "LAB-007_SMOKE_RESULTS_AND_TRADES.json",
+  "baseline": {
+    "trades": 52,
+    "wins": 22,
+    "losses": 30,
+    "win_rate_pct": 42.31,
+    "profit_factor": 1.077,
+    "total_r": 2.506,
+    "max_drawdown_r": 13.334
+  },
+  "temporal_halves": {
+    "first": {
+      "trades": 26,
+      "wins": 11,
+      "losses": 15,
+      "win_rate_pct": 42.31,
+      "profit_factor": 1.171,
+      "total_r": 2.689,
+      "max_drawdown_r": 6.314
+    },
+    "second": {
+      "trades": 26,
+      "wins": 11,
+      "losses": 15,
+      "win_rate_pct": 42.31,
+      "profit_factor": 0.989,
+      "total_r": -0.184,
+      "max_drawdown_r": 13.334
+    }
+  },
+  "per_pair": {
+    "AUD/USD": {
+      "trades": 7,
+      "wins": 5,
+      "losses": 2,
+      "win_rate_pct": 71.43,
+      "profit_factor": 3.163,
+      "total_r": 4.858,
+      "max_drawdown_r": 2.246
+    },
+    "EUR/USD": {
+      "trades": 7,
+      "wins": 2,
+      "losses": 5,
+      "win_rate_pct": 28.57,
+      "profit_factor": 0.562,
+      "total_r": -2.347,
+      "max_drawdown_r": 3.688
+    },
+    "GBP/USD": {
+      "trades": 8,
+      "wins": 3,
+      "losses": 5,
+      "win_rate_pct": 37.5,
+      "profit_factor": 0.936,
+      "total_r": -0.355,
+      "max_drawdown_r": 3.376
+    },
+    "NZD/USD": {
+      "trades": 7,
+      "wins": 3,
+      "losses": 4,
+      "win_rate_pct": 42.86,
+      "profit_factor": 0.934,
+      "total_r": -0.3,
+      "max_drawdown_r": 4.535
+    },
+    "USD/CAD": {
+      "trades": 10,
+      "wins": 3,
+      "losses": 7,
+      "win_rate_pct": 30.0,
+      "profit_factor": 0.637,
+      "total_r": -2.891,
+      "max_drawdown_r": 4.566
+    },
+    "USD/CHF": {
+      "trades": 7,
+      "wins": 2,
+      "losses": 5,
+      "win_rate_pct": 28.57,
+      "profit_factor": 0.725,
+      "total_r": -1.27,
+      "max_drawdown_r": 2.926
+    },
+    "USD/JPY": {
+      "trades": 6,
+      "wins": 4,
+      "losses": 2,
+      "win_rate_pct": 66.67,
+      "profit_factor": 3.185,
+      "total_r": 4.811,
+      "max_drawdown_r": 2.202
+    }
+  },
+  "positive_pairs": 2,
+  "leave_one_pair_out": {
+    "AUD/USD": {
+      "trades": 45,
+      "wins": 17,
+      "losses": 28,
+      "win_rate_pct": 37.78,
+      "profit_factor": 0.922,
+      "total_r": -2.353,
+      "max_drawdown_r": 12.75
+    },
+    "EUR/USD": {
+      "trades": 45,
+      "wins": 20,
+      "losses": 25,
+      "win_rate_pct": 44.44,
+      "profit_factor": 1.179,
+      "total_r": 4.853,
+      "max_drawdown_r": 10.018
+    },
+    "GBP/USD": {
+      "trades": 44,
+      "wins": 19,
+      "losses": 25,
+      "win_rate_pct": 43.18,
+      "profit_factor": 1.106,
+      "total_r": 2.861,
+      "max_drawdown_r": 11.15
+    },
+    "NZD/USD": {
+      "trades": 45,
+      "wins": 19,
+      "losses": 26,
+      "win_rate_pct": 42.22,
+      "profit_factor": 1.1,
+      "total_r": 2.806,
+      "max_drawdown_r": 9.074
+    },
+    "USD/CAD": {
+      "trades": 42,
+      "wins": 19,
+      "losses": 23,
+      "win_rate_pct": 45.24,
+      "profit_factor": 1.22,
+      "total_r": 5.397,
+      "max_drawdown_r": 11.091
+    },
+    "USD/CHF": {
+      "trades": 45,
+      "wins": 20,
+      "losses": 25,
+      "win_rate_pct": 44.44,
+      "profit_factor": 1.136,
+      "total_r": 3.776,
+      "max_drawdown_r": 11.092
+    },
+    "USD/JPY": {
+      "trades": 46,
+      "wins": 18,
+      "losses": 28,
+      "win_rate_pct": 39.13,
+      "profit_factor": 0.924,
+      "total_r": -2.306,
+      "max_drawdown_r": 15.104
+    }
+  },
+  "per_entry_day": {
+    "2026-07-29": {
+      "trades": 14,
+      "wins": 5,
+      "losses": 9,
+      "win_rate_pct": 35.71,
+      "profit_factor": 0.93,
+      "total_r": -0.622,
+      "max_drawdown_r": 5.498
+    },
+    "2026-07-30": {
+      "trades": 14,
+      "wins": 8,
+      "losses": 6,
+      "win_rate_pct": 57.14,
+      "profit_factor": 1.995,
+      "total_r": 6.771,
+      "max_drawdown_r": 5.692
+    },
+    "2026-07-31": {
+      "trades": 24,
+      "wins": 9,
+      "losses": 15,
+      "win_rate_pct": 37.5,
+      "profit_factor": 0.783,
+      "total_r": -3.643,
+      "max_drawdown_r": 13.334
+    }
+  },
+  "concentration": {
+    "top_5_winners_share_of_gross_profit_pct": 25.17,
+    "largest_pair_total_r": 4.858,
+    "smallest_pair_total_r": -2.891
+  },
+  "cost_stress_from_baseline": {
+    "1.0_pip": {
+      "trades": 52,
+      "wins": 24,
+      "losses": 28,
+      "win_rate_pct": 46.15,
+      "profit_factor": 1.355,
+      "total_r": 10.265,
+      "max_drawdown_r": 9.61
+    },
+    "2.0_pip": {
+      "trades": 52,
+      "wins": 21,
+      "losses": 31,
+      "win_rate_pct": 40.38,
+      "profit_factor": 0.925,
+      "total_r": -2.655,
+      "max_drawdown_r": 12.826
+    }
+  },
+  "decision": "INSUFFICIENT_AND_FRAGILE",
+  "reason": "Positive baseline is not robust enough for promotion: sample is short, 2.0-pip stress is negative, and breadth/time-split must both be reviewed.",
+  "next_action": "Keep rules frozen; acquire multi-year M15 data and run chronological OOS plus time-varying spread simulation."
+}
