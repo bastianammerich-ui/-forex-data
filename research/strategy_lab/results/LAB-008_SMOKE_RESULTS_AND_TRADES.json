@@ -1,0 +1,1223 @@
+{
+  "candidate_id": "LAB-008",
+  "name": "H1 Inside-Bar Trend Breakout",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "warning": "Only 400 H1 bars per pair (~16 calendar days); insufficient for breakout-regime stability.",
+  "data_quality": {
+    "rejected_candles": 1,
+    "incomplete_candles": 28,
+    "warning_count": 1,
+    "warnings": [
+      {
+        "interval": "1day",
+        "pair": "NZD/USD",
+        "warning": "rejected_candles",
+        "count": 1
+      }
+    ]
+  },
+  "assumptions": {
+    "pattern": "strict inside bar within previous mother bar",
+    "trend": "close vs EMA100 and 4-bar EMA100 slope",
+    "entry": "mother-bar boundary in trend direction; valid for next 3 H1 bars",
+    "stop": "opposite inside-bar extreme",
+    "target": "2R",
+    "maximum_holding": "12 H1 bars",
+    "cost": "1.5 pip round-turn approximation",
+    "slippage": "not separately modeled",
+    "intended_account_risk": "0.5% per trade"
+  },
+  "aggregate": {
+    "trades": 124,
+    "wins": 27,
+    "losses": 97,
+    "win_rate_pct": 21.77,
+    "profit_factor": 0.368,
+    "total_r": -67.963,
+    "max_drawdown_r": 71.995
+  },
+  "per_pair": {
+    "EUR/USD": {
+      "trades": 21,
+      "wins": 4,
+      "losses": 17,
+      "win_rate_pct": 19.05,
+      "profit_factor": 0.309,
+      "total_r": -13.262,
+      "max_drawdown_r": 14.79
+    },
+    "GBP/USD": {
+      "trades": 15,
+      "wins": 2,
+      "losses": 13,
+      "win_rate_pct": 13.33,
+      "profit_factor": 0.283,
+      "total_r": -9.86,
+      "max_drawdown_r": 11.809
+    },
+    "USD/JPY": {
+      "trades": 22,
+      "wins": 7,
+      "losses": 15,
+      "win_rate_pct": 31.82,
+      "profit_factor": 0.745,
+      "total_r": -4.198,
+      "max_drawdown_r": 10.969
+    },
+    "USD/CHF": {
+      "trades": 21,
+      "wins": 6,
+      "losses": 15,
+      "win_rate_pct": 28.57,
+      "profit_factor": 0.434,
+      "total_r": -9.423,
+      "max_drawdown_r": 10.188
+    },
+    "USD/CAD": {
+      "trades": 17,
+      "wins": 3,
+      "losses": 14,
+      "win_rate_pct": 17.65,
+      "profit_factor": 0.373,
+      "total_r": -9.699,
+      "max_drawdown_r": 12.445
+    },
+    "AUD/USD": {
+      "trades": 16,
+      "wins": 1,
+      "losses": 15,
+      "win_rate_pct": 6.25,
+      "profit_factor": 0.0,
+      "total_r": -16.7,
+      "max_drawdown_r": 16.7
+    },
+    "NZD/USD": {
+      "trades": 12,
+      "wins": 4,
+      "losses": 8,
+      "win_rate_pct": 33.33,
+      "profit_factor": 0.479,
+      "total_r": -4.821,
+      "max_drawdown_r": 6.15
+    }
+  },
+  "trades": [
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-19 14:00:00",
+      "entry_time": "2026-07-19 15:00:00",
+      "exit_time": "2026-07-19 15:00:00",
+      "outcome": "SL",
+      "r": -1.2941
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-19 14:00:00",
+      "entry_time": "2026-07-19 15:00:00",
+      "exit_time": "2026-07-19 15:00:00",
+      "outcome": "SL",
+      "r": -1.2459
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-19 14:00:00",
+      "entry_time": "2026-07-19 17:00:00",
+      "exit_time": "2026-07-19 18:00:00",
+      "outcome": "SL",
+      "r": -1.1042
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-19 20:00:00",
+      "entry_time": "2026-07-19 21:00:00",
+      "exit_time": "2026-07-19 21:00:00",
+      "outcome": "SL",
+      "r": -1.0667
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-19 22:00:00",
+      "entry_time": "2026-07-19 23:00:00",
+      "exit_time": "2026-07-19 23:00:00",
+      "outcome": "SL",
+      "r": -1.1376
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-19 23:00:00",
+      "entry_time": "2026-07-20 00:00:00",
+      "exit_time": "2026-07-20 00:00:00",
+      "outcome": "SL",
+      "r": -1.0551
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-20 08:00:00",
+      "entry_time": "2026-07-20 09:00:00",
+      "exit_time": "2026-07-20 09:00:00",
+      "outcome": "SL",
+      "r": -1.1351
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-20 08:00:00",
+      "entry_time": "2026-07-20 09:00:00",
+      "exit_time": "2026-07-20 09:00:00",
+      "outcome": "SL",
+      "r": -1.1007
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-20 10:00:00",
+      "entry_time": "2026-07-20 11:00:00",
+      "exit_time": "2026-07-20 16:00:00",
+      "outcome": "TP",
+      "r": 1.9345
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-20 10:00:00",
+      "entry_time": "2026-07-20 12:00:00",
+      "exit_time": "2026-07-20 12:00:00",
+      "outcome": "SL",
+      "r": -1.0993
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-20 14:00:00",
+      "entry_time": "2026-07-20 15:00:00",
+      "exit_time": "2026-07-21 03:00:00",
+      "outcome": "TIME",
+      "r": 0.7686
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-20 19:00:00",
+      "entry_time": "2026-07-20 21:00:00",
+      "exit_time": "2026-07-20 23:00:00",
+      "outcome": "TP",
+      "r": 1.898
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-20 21:00:00",
+      "entry_time": "2026-07-20 22:00:00",
+      "exit_time": "2026-07-21 07:00:00",
+      "outcome": "SL",
+      "r": -1.122
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-20 21:00:00",
+      "entry_time": "2026-07-20 22:00:00",
+      "exit_time": "2026-07-20 23:00:00",
+      "outcome": "SL",
+      "r": -1.1327
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 03:00:00",
+      "entry_time": "2026-07-21 04:00:00",
+      "exit_time": "2026-07-21 07:00:00",
+      "outcome": "SL",
+      "r": -1.1376
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 11:00:00",
+      "entry_time": "2026-07-21 13:00:00",
+      "exit_time": "2026-07-21 15:00:00",
+      "outcome": "TP",
+      "r": 1.872
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 11:00:00",
+      "entry_time": "2026-07-21 13:00:00",
+      "exit_time": "2026-07-21 20:00:00",
+      "outcome": "TP",
+      "r": 1.9321
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-21 17:00:00",
+      "entry_time": "2026-07-21 20:00:00",
+      "exit_time": "2026-07-22 08:00:00",
+      "outcome": "SL",
+      "r": -1.0802
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 18:00:00",
+      "entry_time": "2026-07-21 20:00:00",
+      "exit_time": "2026-07-21 20:00:00",
+      "outcome": "TP",
+      "r": 1.918
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-21 21:00:00",
+      "entry_time": "2026-07-21 22:00:00",
+      "exit_time": "2026-07-22 02:00:00",
+      "outcome": "SL",
+      "r": -1.0732
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 21:00:00",
+      "entry_time": "2026-07-21 22:00:00",
+      "exit_time": "2026-07-21 23:00:00",
+      "outcome": "SL",
+      "r": -1.0885
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 00:00:00",
+      "entry_time": "2026-07-22 01:00:00",
+      "exit_time": "2026-07-22 02:00:00",
+      "outcome": "SL",
+      "r": -1.1373
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 23:00:00",
+      "entry_time": "2026-07-22 01:00:00",
+      "exit_time": "2026-07-22 02:00:00",
+      "outcome": "SL",
+      "r": -1.1163
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-21 23:00:00",
+      "entry_time": "2026-07-22 02:00:00",
+      "exit_time": "2026-07-22 06:00:00",
+      "outcome": "SL",
+      "r": -1.1304
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-22 00:00:00",
+      "entry_time": "2026-07-22 02:00:00",
+      "exit_time": "2026-07-22 02:00:00",
+      "outcome": "SL",
+      "r": -1.1546
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-22 04:00:00",
+      "entry_time": "2026-07-22 05:00:00",
+      "exit_time": "2026-07-22 17:00:00",
+      "outcome": "TIME",
+      "r": 0.449
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-22 05:00:00",
+      "entry_time": "2026-07-22 06:00:00",
+      "exit_time": "2026-07-22 08:00:00",
+      "outcome": "SL",
+      "r": -1.098
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 05:00:00",
+      "entry_time": "2026-07-22 06:00:00",
+      "exit_time": "2026-07-22 08:00:00",
+      "outcome": "SL",
+      "r": -1.1515
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 10:00:00",
+      "entry_time": "2026-07-22 11:00:00",
+      "exit_time": "2026-07-22 11:00:00",
+      "outcome": "SL",
+      "r": -1.0718
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 10:00:00",
+      "entry_time": "2026-07-22 11:00:00",
+      "exit_time": "2026-07-22 14:00:00",
+      "outcome": "SL",
+      "r": -1.0622
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-22 10:00:00",
+      "entry_time": "2026-07-22 12:00:00",
+      "exit_time": "2026-07-22 14:00:00",
+      "outcome": "SL",
+      "r": -1.0794
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 16:00:00",
+      "entry_time": "2026-07-22 17:00:00",
+      "exit_time": "2026-07-23 03:00:00",
+      "outcome": "SL",
+      "r": -1.1014
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-22 16:00:00",
+      "entry_time": "2026-07-22 18:00:00",
+      "exit_time": "2026-07-23 03:00:00",
+      "outcome": "SL",
+      "r": -1.0667
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 17:00:00",
+      "entry_time": "2026-07-22 18:00:00",
+      "exit_time": "2026-07-22 22:00:00",
+      "outcome": "SL",
+      "r": -1.0612
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-22 23:00:00",
+      "entry_time": "2026-07-23 00:00:00",
+      "exit_time": "2026-07-23 02:00:00",
+      "outcome": "SL",
+      "r": -1.1128
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-23 01:00:00",
+      "entry_time": "2026-07-23 03:00:00",
+      "exit_time": "2026-07-23 03:00:00",
+      "outcome": "SL",
+      "r": -1.1515
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-23 06:00:00",
+      "entry_time": "2026-07-23 07:00:00",
+      "exit_time": "2026-07-23 09:00:00",
+      "outcome": "TP",
+      "r": 1.881
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-23 11:00:00",
+      "entry_time": "2026-07-23 12:00:00",
+      "exit_time": "2026-07-23 13:00:00",
+      "outcome": "TP",
+      "r": 1.9102
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-23 11:00:00",
+      "entry_time": "2026-07-23 12:00:00",
+      "exit_time": "2026-07-23 15:00:00",
+      "outcome": "TP",
+      "r": 1.9511
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-23 11:00:00",
+      "entry_time": "2026-07-23 12:00:00",
+      "exit_time": "2026-07-23 14:00:00",
+      "outcome": "TP",
+      "r": 1.9162
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-23 12:00:00",
+      "entry_time": "2026-07-23 13:00:00",
+      "exit_time": "2026-07-23 13:00:00",
+      "outcome": "TP",
+      "r": 1.8584
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-23 10:00:00",
+      "entry_time": "2026-07-23 13:00:00",
+      "exit_time": "2026-07-24 01:00:00",
+      "outcome": "TIME",
+      "r": 0.7474
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-23 15:00:00",
+      "entry_time": "2026-07-23 16:00:00",
+      "exit_time": "2026-07-24 03:00:00",
+      "outcome": "SL",
+      "r": -1.0386
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-23 16:00:00",
+      "entry_time": "2026-07-23 17:00:00",
+      "exit_time": "2026-07-24 03:00:00",
+      "outcome": "SL",
+      "r": -1.0667
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 00:00:00",
+      "entry_time": "2026-07-24 02:00:00",
+      "exit_time": "2026-07-24 03:00:00",
+      "outcome": "SL",
+      "r": -1.0841
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 04:00:00",
+      "entry_time": "2026-07-24 05:00:00",
+      "exit_time": "2026-07-24 09:00:00",
+      "outcome": "SL",
+      "r": -1.0554
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 07:00:00",
+      "entry_time": "2026-07-24 08:00:00",
+      "exit_time": "2026-07-24 08:00:00",
+      "outcome": "SL",
+      "r": -1.0898
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-24 11:00:00",
+      "entry_time": "2026-07-24 12:00:00",
+      "exit_time": "2026-07-24 12:00:00",
+      "outcome": "SL",
+      "r": -1.1007
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 14:00:00",
+      "entry_time": "2026-07-24 15:00:00",
+      "exit_time": "2026-07-24 16:00:00",
+      "outcome": "SL",
+      "r": -1.0785
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-24 18:00:00",
+      "entry_time": "2026-07-24 19:00:00",
+      "exit_time": "2026-07-25 07:00:00",
+      "outcome": "TIME",
+      "r": 0.1231
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-24 18:00:00",
+      "entry_time": "2026-07-24 19:00:00",
+      "exit_time": "2026-07-25 07:00:00",
+      "outcome": "TIME",
+      "r": -0.0458
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 18:00:00",
+      "entry_time": "2026-07-24 19:00:00",
+      "exit_time": "2026-07-25 07:00:00",
+      "outcome": "TIME",
+      "r": 0.1959
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-24 18:00:00",
+      "entry_time": "2026-07-24 19:00:00",
+      "exit_time": "2026-07-25 07:00:00",
+      "outcome": "TIME",
+      "r": 0.1187
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 20:00:00",
+      "entry_time": "2026-07-24 21:00:00",
+      "exit_time": "2026-07-24 21:00:00",
+      "outcome": "SL",
+      "r": -1.1613
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-24 21:00:00",
+      "entry_time": "2026-07-24 22:00:00",
+      "exit_time": "2026-07-24 23:00:00",
+      "outcome": "SL",
+      "r": -1.1349
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-25 01:00:00",
+      "entry_time": "2026-07-25 02:00:00",
+      "exit_time": "2026-07-25 14:00:00",
+      "outcome": "TIME",
+      "r": -0.5104
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 09:00:00",
+      "entry_time": "2026-07-25 12:00:00",
+      "exit_time": "2026-07-25 12:00:00",
+      "outcome": "SL",
+      "r": -1.1485
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-25 11:00:00",
+      "entry_time": "2026-07-25 12:00:00",
+      "exit_time": "2026-07-25 12:00:00",
+      "outcome": "SL",
+      "r": -1.1948
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 09:00:00",
+      "entry_time": "2026-07-25 12:00:00",
+      "exit_time": "2026-07-25 12:00:00",
+      "outcome": "SL",
+      "r": -1.1327
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 14:00:00",
+      "entry_time": "2026-07-25 15:00:00",
+      "exit_time": "2026-07-25 15:00:00",
+      "outcome": "SL",
+      "r": -1.1485
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 14:00:00",
+      "entry_time": "2026-07-25 15:00:00",
+      "exit_time": "2026-07-25 15:00:00",
+      "outcome": "SL",
+      "r": -1.3846
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 14:00:00",
+      "entry_time": "2026-07-25 15:00:00",
+      "exit_time": "2026-07-25 15:00:00",
+      "outcome": "SL",
+      "r": -1.2113
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 17:00:00",
+      "entry_time": "2026-07-25 19:00:00",
+      "exit_time": "2026-07-26 00:00:00",
+      "outcome": "SL",
+      "r": -1.1163
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-25 21:00:00",
+      "entry_time": "2026-07-25 22:00:00",
+      "exit_time": "2026-07-25 22:00:00",
+      "outcome": "SL",
+      "r": -1.1103
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-25 21:00:00",
+      "entry_time": "2026-07-25 23:00:00",
+      "exit_time": "2026-07-25 23:00:00",
+      "outcome": "SL",
+      "r": -1.1899
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-25 23:00:00",
+      "entry_time": "2026-07-26 01:00:00",
+      "exit_time": "2026-07-26 01:00:00",
+      "outcome": "SL",
+      "r": -1.2459
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 00:00:00",
+      "entry_time": "2026-07-26 01:00:00",
+      "exit_time": "2026-07-26 06:00:00",
+      "outcome": "SL",
+      "r": -1.1163
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 00:00:00",
+      "entry_time": "2026-07-26 02:00:00",
+      "exit_time": "2026-07-26 04:00:00",
+      "outcome": "SL",
+      "r": -1.1648
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 07:00:00",
+      "entry_time": "2026-07-26 08:00:00",
+      "exit_time": "2026-07-26 08:00:00",
+      "outcome": "SL",
+      "r": -1.1181
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 07:00:00",
+      "entry_time": "2026-07-26 08:00:00",
+      "exit_time": "2026-07-26 08:00:00",
+      "outcome": "SL",
+      "r": -1.3333
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 07:00:00",
+      "entry_time": "2026-07-26 08:00:00",
+      "exit_time": "2026-07-26 08:00:00",
+      "outcome": "SL",
+      "r": -1.3983
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 07:00:00",
+      "entry_time": "2026-07-26 08:00:00",
+      "exit_time": "2026-07-26 08:00:00",
+      "outcome": "SL",
+      "r": -1.1376
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 10:00:00",
+      "entry_time": "2026-07-26 11:00:00",
+      "exit_time": "2026-07-26 13:00:00",
+      "outcome": "SL",
+      "r": -1.1261
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 10:00:00",
+      "entry_time": "2026-07-26 13:00:00",
+      "exit_time": "2026-07-26 13:00:00",
+      "outcome": "SL",
+      "r": -1.3548
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 14:00:00",
+      "entry_time": "2026-07-26 15:00:00",
+      "exit_time": "2026-07-26 15:00:00",
+      "outcome": "SL",
+      "r": -1.3061
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 14:00:00",
+      "entry_time": "2026-07-26 15:00:00",
+      "exit_time": "2026-07-26 15:00:00",
+      "outcome": "SL",
+      "r": -1.4545
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 12:00:00",
+      "entry_time": "2026-07-26 15:00:00",
+      "exit_time": "2026-07-26 15:00:00",
+      "outcome": "SL",
+      "r": -1.4839
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 14:00:00",
+      "entry_time": "2026-07-26 16:00:00",
+      "exit_time": "2026-07-26 16:00:00",
+      "outcome": "SL",
+      "r": -1.2174
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 16:00:00",
+      "entry_time": "2026-07-26 17:00:00",
+      "exit_time": "2026-07-26 17:00:00",
+      "outcome": "SL",
+      "r": -1.1579
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 19:00:00",
+      "entry_time": "2026-07-26 20:00:00",
+      "exit_time": "2026-07-26 20:00:00",
+      "outcome": "SL",
+      "r": -1.0829
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 20:00:00",
+      "entry_time": "2026-07-26 21:00:00",
+      "exit_time": "2026-07-26 21:00:00",
+      "outcome": "SL",
+      "r": -1.2055
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 19:00:00",
+      "entry_time": "2026-07-26 21:00:00",
+      "exit_time": "2026-07-26 21:00:00",
+      "outcome": "SL",
+      "r": -1.1095
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-26 22:00:00",
+      "entry_time": "2026-07-26 23:00:00",
+      "exit_time": "2026-07-27 11:00:00",
+      "outcome": "TIME",
+      "r": 0.005
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-26 23:00:00",
+      "entry_time": "2026-07-27 00:00:00",
+      "exit_time": "2026-07-27 12:00:00",
+      "outcome": "TIME",
+      "r": 0.4747
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 06:00:00",
+      "entry_time": "2026-07-27 07:00:00",
+      "exit_time": "2026-07-27 09:00:00",
+      "outcome": "SL",
+      "r": -1.1282
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 09:00:00",
+      "entry_time": "2026-07-27 11:00:00",
+      "exit_time": "2026-07-27 20:00:00",
+      "outcome": "TP",
+      "r": 1.9254
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 16:00:00",
+      "entry_time": "2026-07-27 17:00:00",
+      "exit_time": "2026-07-27 18:00:00",
+      "outcome": "SL",
+      "r": -1.0617
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 17:00:00",
+      "entry_time": "2026-07-27 18:00:00",
+      "exit_time": "2026-07-27 19:00:00",
+      "outcome": "SL",
+      "r": -1.0932
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 20:00:00",
+      "entry_time": "2026-07-27 21:00:00",
+      "exit_time": "2026-07-27 21:00:00",
+      "outcome": "SL",
+      "r": -1.1456
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-27 21:00:00",
+      "entry_time": "2026-07-27 22:00:00",
+      "exit_time": "2026-07-28 02:00:00",
+      "outcome": "SL",
+      "r": -1.1049
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-27 22:00:00",
+      "entry_time": "2026-07-27 23:00:00",
+      "exit_time": "2026-07-27 23:00:00",
+      "outcome": "SL",
+      "r": -1.1261
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-28 04:00:00",
+      "entry_time": "2026-07-28 06:00:00",
+      "exit_time": "2026-07-28 16:00:00",
+      "outcome": "SL",
+      "r": -1.0877
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-28 04:00:00",
+      "entry_time": "2026-07-28 06:00:00",
+      "exit_time": "2026-07-28 08:00:00",
+      "outcome": "SL",
+      "r": -1.0829
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-28 04:00:00",
+      "entry_time": "2026-07-28 07:00:00",
+      "exit_time": "2026-07-28 08:00:00",
+      "outcome": "SL",
+      "r": -1.0968
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-28 10:00:00",
+      "entry_time": "2026-07-28 11:00:00",
+      "exit_time": "2026-07-28 11:00:00",
+      "outcome": "SL",
+      "r": -1.0777
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-28 10:00:00",
+      "entry_time": "2026-07-28 11:00:00",
+      "exit_time": "2026-07-28 17:00:00",
+      "outcome": "SL",
+      "r": -1.0538
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-28 10:00:00",
+      "entry_time": "2026-07-28 11:00:00",
+      "exit_time": "2026-07-28 14:00:00",
+      "outcome": "SL",
+      "r": -1.0898
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-28 18:00:00",
+      "entry_time": "2026-07-28 20:00:00",
+      "exit_time": "2026-07-29 08:00:00",
+      "outcome": "TIME",
+      "r": -0.446
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-28 21:00:00",
+      "entry_time": "2026-07-28 22:00:00",
+      "exit_time": "2026-07-28 23:00:00",
+      "outcome": "SL",
+      "r": -1.1605
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-29 00:00:00",
+      "entry_time": "2026-07-29 01:00:00",
+      "exit_time": "2026-07-29 06:00:00",
+      "outcome": "SL",
+      "r": -1.0838
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-29 07:00:00",
+      "entry_time": "2026-07-29 08:00:00",
+      "exit_time": "2026-07-29 12:00:00",
+      "outcome": "TP",
+      "r": 1.9315
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-29 11:00:00",
+      "entry_time": "2026-07-29 12:00:00",
+      "exit_time": "2026-07-29 16:00:00",
+      "outcome": "SL",
+      "r": -1.1304
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-29 17:00:00",
+      "entry_time": "2026-07-29 20:00:00",
+      "exit_time": "2026-07-29 20:00:00",
+      "outcome": "SL",
+      "r": -1.0485
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-29 23:00:00",
+      "entry_time": "2026-07-30 00:00:00",
+      "exit_time": "2026-07-30 02:00:00",
+      "outcome": "SL",
+      "r": -1.0512
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 00:00:00",
+      "entry_time": "2026-07-30 01:00:00",
+      "exit_time": "2026-07-30 02:00:00",
+      "outcome": "SL",
+      "r": -1.0772
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-29 23:00:00",
+      "entry_time": "2026-07-30 01:00:00",
+      "exit_time": "2026-07-30 02:00:00",
+      "outcome": "SL",
+      "r": -1.0479
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 00:00:00",
+      "entry_time": "2026-07-30 01:00:00",
+      "exit_time": "2026-07-30 11:00:00",
+      "outcome": "TP",
+      "r": 1.9481
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 03:00:00",
+      "entry_time": "2026-07-30 05:00:00",
+      "exit_time": "2026-07-30 11:00:00",
+      "outcome": "SL",
+      "r": -1.0566
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 06:00:00",
+      "entry_time": "2026-07-30 07:00:00",
+      "exit_time": "2026-07-30 08:00:00",
+      "outcome": "SL",
+      "r": -1.122
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 06:00:00",
+      "entry_time": "2026-07-30 07:00:00",
+      "exit_time": "2026-07-30 07:00:00",
+      "outcome": "SL",
+      "r": -1.1064
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 09:00:00",
+      "entry_time": "2026-07-30 10:00:00",
+      "exit_time": "2026-07-30 11:00:00",
+      "outcome": "TP",
+      "r": 1.9481
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 10:00:00",
+      "entry_time": "2026-07-30 11:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "TP",
+      "r": 1.9495
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 13:00:00",
+      "entry_time": "2026-07-30 14:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "TP",
+      "r": 1.9573
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 13:00:00",
+      "entry_time": "2026-07-30 14:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "SL",
+      "r": -1.092
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 13:00:00",
+      "entry_time": "2026-07-30 14:00:00",
+      "exit_time": "2026-07-30 14:00:00",
+      "outcome": "SL",
+      "r": -1.092
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 13:00:00",
+      "entry_time": "2026-07-30 15:00:00",
+      "exit_time": "2026-07-30 16:00:00",
+      "outcome": "TP",
+      "r": 1.962
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 13:00:00",
+      "entry_time": "2026-07-30 15:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "TP",
+      "r": 1.9822
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-30 17:00:00",
+      "entry_time": "2026-07-30 20:00:00",
+      "exit_time": "2026-07-31 07:00:00",
+      "outcome": "SL",
+      "r": -1.0199
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-30 22:00:00",
+      "entry_time": "2026-07-31 00:00:00",
+      "exit_time": "2026-07-31 00:00:00",
+      "outcome": "SL",
+      "r": -1.1351
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-31 00:00:00",
+      "entry_time": "2026-07-31 01:00:00",
+      "exit_time": "2026-07-31 01:00:00",
+      "outcome": "SL",
+      "r": -1.092
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-31 07:00:00",
+      "entry_time": "2026-07-31 08:00:00",
+      "exit_time": "2026-07-31 10:00:00",
+      "outcome": "SL",
+      "r": -1.0746
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-31 06:00:00",
+      "entry_time": "2026-07-31 08:00:00",
+      "exit_time": "2026-07-31 10:00:00",
+      "outcome": "TP",
+      "r": 1.9769
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "inside_bar_time": "2026-07-31 09:00:00",
+      "entry_time": "2026-07-31 10:00:00",
+      "exit_time": "2026-07-31 10:00:00",
+      "outcome": "SL",
+      "r": -1.0566
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "inside_bar_time": "2026-07-31 09:00:00",
+      "entry_time": "2026-07-31 10:00:00",
+      "exit_time": "2026-07-31 10:00:00",
+      "outcome": "SL",
+      "r": -1.0732
+    }
+  ]
+}
