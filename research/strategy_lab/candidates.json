@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T20:03:53Z",
+  "updated_at_utc": "2026-07-31T20:33:54Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -39,6 +39,25 @@
       },
       "evidence_warning": "Only 300 H4 bars per pair, about 50 calendar days. Not evidence of a durable edge.",
       "next_action": "Do not tune on this short sample. Preserve unchanged as a benchmark and move to a different strategy family."
+    },
+    {
+      "id": "LAB-003",
+      "name": "Daily 60-Day Time-Series Momentum",
+      "horizon": "swing_position",
+      "risk_profile": "low",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 40,
+        "wins": 11,
+        "losses": 29,
+        "win_rate_pct": 27.5,
+        "profit_factor": 0.366,
+        "total_r": -14.147,
+        "max_drawdown_r": 14.147
+      },
+      "evidence_warning": "Less than one year of weekday-filtered daily data. Not a valid test of long-horizon momentum.",
+      "next_action": "Preserve unchanged; retest only with 10+ years of independent daily data."
     }
   ]
 }
