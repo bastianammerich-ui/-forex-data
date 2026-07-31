@@ -8,7 +8,7 @@ No newly researched strategy is qualified for promotion yet.
 
 | Rank | Candidate | Horizon | Status | Evidence |
 |---:|---|---|---|---|
-| — | LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping | Research only, not qualified | PF 1.077 at 1.5 pip; fails 2.0-pip stress; very short sample |
+| — | — | — | No qualified candidate | — |
 
 ## Medium risk
 
@@ -20,7 +20,7 @@ No newly researched strategy is qualified for promotion yet.
 
 | Rank | Candidate | Horizon | Status | Evidence |
 |---:|---|---|---|---|
-| — | — | — | No qualified candidate | — |
+| — | LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping | Research only, not qualified | PF 1.077 at 1.5 pip; fails 2.0-pip stress; very short sample |
 
 ## Rejected / insufficient evidence
 
