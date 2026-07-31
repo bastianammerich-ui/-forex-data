@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T23:03:56Z",
+  "updated_at_utc": "2026-07-31T23:33:57Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -160,6 +160,25 @@
         },
         "decision": "INSUFFICIENT_AND_FRAGILE"
       }
+    },
+    {
+      "id": "LAB-008",
+      "name": "H1 Inside-Bar Trend Breakout",
+      "horizon": "intraday",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 124,
+        "wins": 27,
+        "losses": 97,
+        "win_rate_pct": 21.77,
+        "profit_factor": 0.368,
+        "total_r": -67.963,
+        "max_drawdown_r": 71.995
+      },
+      "evidence_warning": "Only ~16 calendar days, but the large negative result is sufficient to reject this exact formulation as a smoke candidate.",
+      "next_action": "Preserve as a negative benchmark. Do not repair with sample-specific filters."
     }
   ]
 }
