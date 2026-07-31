@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T21:03:54Z",
+  "updated_at_utc": "2026-07-31T21:33:55Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -77,6 +77,25 @@
       },
       "evidence_warning": "Less than one year of weekday-filtered daily data; two USD legs proxy a direct strongest-versus-weakest cross.",
       "next_action": "Do not repair with sample-specific filters. Retest unchanged on 10+ years of independent data and compare direct crosses where available."
+    },
+    {
+      "id": "LAB-005",
+      "name": "H4 Regime-Filtered Bollinger Mean Reversion",
+      "horizon": "intraday_swing",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 8,
+        "wins": 2,
+        "losses": 6,
+        "win_rate_pct": 25,
+        "profit_factor": 0.7,
+        "total_r": -1.558,
+        "max_drawdown_r": 2.136
+      },
+      "evidence_warning": "Only 299 complete H4 bars per pair (~50 calendar days) and eight signals; no defensible regime inference.",
+      "next_action": "Do not tune thresholds on this sample. Retest the frozen rules only on multi-year data with OOS and cost stress."
     }
   ]
 }
