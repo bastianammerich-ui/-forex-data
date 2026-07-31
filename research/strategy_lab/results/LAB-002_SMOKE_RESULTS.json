@@ -1,0 +1,75 @@
+{
+  "candidate_id": "LAB-002",
+  "name": "H4 EMA Pullback Continuation",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "available_h4_bars_per_pair": 300,
+  "warning": "Only about 50 calendar days of H4 data; not evidence of a durable edge.",
+  "assumptions": {
+    "spread": "1.2 pip round-turn approximation",
+    "slippage": "not separately modeled",
+    "same_bar_conflict": "stop first",
+    "weekends": "excluded",
+    "intended_account_risk": "0.5% per trade"
+  },
+  "aggregate": {
+    "trades": 21,
+    "wins": 3,
+    "losses": 18,
+    "win_rate_pct": 14.29,
+    "profit_factor": 0.268,
+    "total_r": -12.352,
+    "max_drawdown_r": 12.352
+  },
+  "per_pair": {
+    "EUR/USD": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "profit_factor": 0,
+      "total_r": -2.64
+    },
+    "GBP/USD": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "profit_factor": 0,
+      "total_r": -1.013
+    },
+    "USD/JPY": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "profit_factor": 0.673,
+      "total_r": -0.661
+    },
+    "USD/CHF": {
+      "trades": 5,
+      "wins": 1,
+      "losses": 4,
+      "profit_factor": 0.223,
+      "total_r": -2.375
+    },
+    "USD/CAD": {
+      "trades": 4,
+      "wins": 1,
+      "losses": 3,
+      "profit_factor": 0.816,
+      "total_r": -0.559
+    },
+    "AUD/USD": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "profit_factor": 0,
+      "total_r": -3.057
+    },
+    "NZD/USD": {
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "profit_factor": 0,
+      "total_r": -2.047
+    }
+  }
+}
