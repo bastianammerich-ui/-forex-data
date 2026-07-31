@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T20:33:54Z",
+  "updated_at_utc": "2026-07-31T21:03:54Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -58,6 +58,25 @@
       },
       "evidence_warning": "Less than one year of weekday-filtered daily data. Not a valid test of long-horizon momentum.",
       "next_action": "Preserve unchanged; retest only with 10+ years of independent daily data."
+    },
+    {
+      "id": "LAB-004",
+      "name": "Weekly Cross-Sectional Currency Strength Portfolio",
+      "horizon": "swing",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 40,
+        "wins": 19,
+        "losses": 21,
+        "win_rate_pct": 47.5,
+        "profit_factor": 0.658,
+        "total_r": -1.852,
+        "max_drawdown_r": 2.109
+      },
+      "evidence_warning": "Less than one year of weekday-filtered daily data; two USD legs proxy a direct strongest-versus-weakest cross.",
+      "next_action": "Do not repair with sample-specific filters. Retest unchanged on 10+ years of independent data and compare direct crosses where available."
     }
   ]
 }
