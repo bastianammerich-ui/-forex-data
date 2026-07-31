@@ -1,0 +1,1329 @@
+{
+  "candidate_id": "LAB-004",
+  "name": "Weekly Cross-Sectional Currency Strength Portfolio",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "warning": "Less than one year of weekday-filtered daily data; USD-relative legs are a proxy for a direct strongest-versus-weakest cross.",
+  "data_quality": {
+    "rejected_candles": 1,
+    "incomplete_candles": 28,
+    "warning_count": 1,
+    "warnings": [
+      {
+        "interval": "1day",
+        "pair": "NZD/USD",
+        "warning": "rejected_candles",
+        "count": 1
+      }
+    ]
+  },
+  "assumptions": {
+    "ranking": "20-trading-day return of seven non-USD currencies versus USD",
+    "rebalance": "every 5 common trading days; enter next daily open; hold 5 bars",
+    "portfolio": "strongest currency long and weakest currency short via two equal-risk USD legs",
+    "stop": "2 x ATR14 per leg",
+    "cost": "1.5 pip round-turn approximation per leg",
+    "slippage": "not separately modeled",
+    "intended_account_risk": "0.5% per leg; 1.0% total initial portfolio risk"
+  },
+  "aggregate_portfolios": {
+    "trades": 40,
+    "wins": 19,
+    "losses": 21,
+    "win_rate_pct": 47.5,
+    "profit_factor": 0.658,
+    "total_r": -1.852,
+    "max_drawdown_r": 2.109
+  },
+  "aggregate_legs": {
+    "trades": 80,
+    "wins": 39,
+    "losses": 41,
+    "win_rate_pct": 48.75,
+    "profit_factor": 0.854,
+    "total_r": -3.705,
+    "max_drawdown_r": 4.932
+  },
+  "portfolios": [
+    {
+      "signal_time": "2025-10-17",
+      "entry_time": "2025-10-20",
+      "exit_time": "2025-10-24",
+      "strongest": "CHF",
+      "weakest": "NZD",
+      "score_strong": 0.003107,
+      "score_weak": -0.020147,
+      "r": -0.1728,
+      "legs": [
+        {
+          "currency": "CHF",
+          "role": "STRONG",
+          "pair": "USD/CHF",
+          "side": "SHORT",
+          "entry_time": "2025-10-20",
+          "exit_time": "2025-10-24",
+          "outcome": "REBALANCE",
+          "r": -0.1319
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2025-10-20",
+          "exit_time": "2025-10-24",
+          "outcome": "REBALANCE",
+          "r": -0.2136
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-10-24",
+      "entry_time": "2025-10-27",
+      "exit_time": "2025-10-31",
+      "strongest": "CHF",
+      "weakest": "JPY",
+      "score_strong": 0.002846,
+      "score_weak": -0.022556,
+      "r": -0.1805,
+      "legs": [
+        {
+          "currency": "CHF",
+          "role": "STRONG",
+          "pair": "USD/CHF",
+          "side": "SHORT",
+          "entry_time": "2025-10-27",
+          "exit_time": "2025-10-31",
+          "outcome": "REBALANCE",
+          "r": -0.8058
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-10-27",
+          "exit_time": "2025-10-31",
+          "outcome": "REBALANCE",
+          "r": 0.4448
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-10-31",
+      "entry_time": "2025-11-03",
+      "exit_time": "2025-11-07",
+      "strongest": "CAD",
+      "weakest": "JPY",
+      "score_strong": -0.005636,
+      "score_weak": -0.045516,
+      "r": -0.648,
+      "legs": [
+        {
+          "currency": "CAD",
+          "role": "STRONG",
+          "pair": "USD/CAD",
+          "side": "SHORT",
+          "entry_time": "2025-11-03",
+          "exit_time": "2025-11-05",
+          "outcome": "SL",
+          "r": -1.0064
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-11-03",
+          "exit_time": "2025-11-07",
+          "outcome": "REBALANCE",
+          "r": -0.2896
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-11-07",
+      "entry_time": "2025-11-10",
+      "exit_time": "2025-11-14",
+      "strongest": "AUD",
+      "weakest": "NZD",
+      "score_strong": 0.001624,
+      "score_weak": -0.017108,
+      "r": -0.2188,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2025-11-10",
+          "exit_time": "2025-11-14",
+          "outcome": "REBALANCE",
+          "r": 0.3564
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2025-11-10",
+          "exit_time": "2025-11-14",
+          "outcome": "REBALANCE",
+          "r": -0.7939
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-11-14",
+      "entry_time": "2025-11-17",
+      "exit_time": "2025-11-21",
+      "strongest": "AUD",
+      "weakest": "JPY",
+      "score_strong": 0.005418,
+      "score_weak": -0.027067,
+      "r": -0.1183,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2025-11-17",
+          "exit_time": "2025-11-20",
+          "outcome": "SL",
+          "r": -1.0083
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-11-17",
+          "exit_time": "2025-11-21",
+          "outcome": "REBALANCE",
+          "r": 0.7717
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-11-21",
+      "entry_time": "2025-11-24",
+      "exit_time": "2025-11-28",
+      "strongest": "CAD",
+      "weakest": "NZD",
+      "score_strong": -0.006858,
+      "score_weak": -0.023745,
+      "r": -0.0008,
+      "legs": [
+        {
+          "currency": "CAD",
+          "role": "STRONG",
+          "pair": "USD/CAD",
+          "side": "SHORT",
+          "entry_time": "2025-11-24",
+          "exit_time": "2025-11-28",
+          "outcome": "REBALANCE",
+          "r": 1.0073
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2025-11-24",
+          "exit_time": "2025-11-26",
+          "outcome": "SL",
+          "r": -1.0089
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-11-28",
+      "entry_time": "2025-12-01",
+      "exit_time": "2025-12-05",
+      "strongest": "GBP",
+      "weakest": "JPY",
+      "score_strong": 0.00826,
+      "score_weak": -0.013006,
+      "r": 0.1436,
+      "legs": [
+        {
+          "currency": "GBP",
+          "role": "STRONG",
+          "pair": "GBP/USD",
+          "side": "LONG",
+          "entry_time": "2025-12-01",
+          "exit_time": "2025-12-05",
+          "outcome": "REBALANCE",
+          "r": 0.6826
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-12-01",
+          "exit_time": "2025-12-05",
+          "outcome": "REBALANCE",
+          "r": -0.3953
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-12-05",
+      "entry_time": "2025-12-08",
+      "exit_time": "2025-12-12",
+      "strongest": "NZD",
+      "weakest": "JPY",
+      "score_strong": 0.026409,
+      "score_weak": -0.011397,
+      "r": 0.2917,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2025-12-08",
+          "exit_time": "2025-12-12",
+          "outcome": "REBALANCE",
+          "r": 0.2734
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-12-08",
+          "exit_time": "2025-12-12",
+          "outcome": "REBALANCE",
+          "r": 0.31
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-12-12",
+      "entry_time": "2025-12-15",
+      "exit_time": "2025-12-19",
+      "strongest": "NZD",
+      "weakest": "JPY",
+      "score_strong": 0.021472,
+      "score_weak": -0.00873,
+      "r": 0.1922,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2025-12-15",
+          "exit_time": "2025-12-19",
+          "outcome": "REBALANCE",
+          "r": -0.4561
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-12-15",
+          "exit_time": "2025-12-19",
+          "outcome": "REBALANCE",
+          "r": 0.8404
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-12-19",
+      "entry_time": "2025-12-22",
+      "exit_time": "2025-12-26",
+      "strongest": "NZD",
+      "weakest": "JPY",
+      "score_strong": 0.026852,
+      "score_weak": -0.007797,
+      "r": 0.2562,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2025-12-22",
+          "exit_time": "2025-12-26",
+          "outcome": "REBALANCE",
+          "r": 1.0504
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-12-22",
+          "exit_time": "2025-12-26",
+          "outcome": "REBALANCE",
+          "r": -0.5379
+        }
+      ]
+    },
+    {
+      "signal_time": "2025-12-26",
+      "entry_time": "2025-12-29",
+      "exit_time": "2026-01-02",
+      "strongest": "AUD",
+      "weakest": "JPY",
+      "score_strong": 0.024315,
+      "score_weak": -0.002695,
+      "r": -0.0554,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2025-12-29",
+          "exit_time": "2026-01-02",
+          "outcome": "REBALANCE",
+          "r": -0.2307
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2025-12-29",
+          "exit_time": "2026-01-02",
+          "outcome": "REBALANCE",
+          "r": 0.1198
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-01-02",
+      "entry_time": "2026-01-05",
+      "exit_time": "2026-01-09",
+      "strongest": "CHF",
+      "weakest": "JPY",
+      "score_strong": 0.01539,
+      "score_weak": -0.010014,
+      "r": -0.1873,
+      "legs": [
+        {
+          "currency": "CHF",
+          "role": "STRONG",
+          "pair": "USD/CHF",
+          "side": "SHORT",
+          "entry_time": "2026-01-05",
+          "exit_time": "2026-01-08",
+          "outcome": "SL",
+          "r": -1.0104
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-01-05",
+          "exit_time": "2026-01-09",
+          "outcome": "REBALANCE",
+          "r": 0.6357
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-01-09",
+      "entry_time": "2026-01-12",
+      "exit_time": "2026-01-16",
+      "strongest": "AUD",
+      "weakest": "JPY",
+      "score_strong": 0.005277,
+      "score_weak": -0.012809,
+      "r": 0.0637,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-01-12",
+          "exit_time": "2026-01-16",
+          "outcome": "REBALANCE",
+          "r": 0.0423
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-01-12",
+          "exit_time": "2026-01-16",
+          "outcome": "REBALANCE",
+          "r": 0.0851
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-01-16",
+      "entry_time": "2026-01-19",
+      "exit_time": "2026-01-23",
+      "strongest": "AUD",
+      "weakest": "CHF",
+      "score_strong": 0.00979,
+      "score_weak": -0.011023,
+      "r": 0.8167,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-01-19",
+          "exit_time": "2026-01-23",
+          "outcome": "REBALANCE",
+          "r": 2.6428
+        },
+        {
+          "currency": "CHF",
+          "role": "WEAK",
+          "pair": "USD/CHF",
+          "side": "LONG",
+          "entry_time": "2026-01-19",
+          "exit_time": "2026-01-20",
+          "outcome": "SL",
+          "r": -1.0093
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-01-23",
+      "entry_time": "2026-01-26",
+      "exit_time": "2026-01-30",
+      "strongest": "AUD",
+      "weakest": "CAD",
+      "score_strong": 0.026361,
+      "score_weak": -0.002531,
+      "r": -0.2331,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-01-26",
+          "exit_time": "2026-01-30",
+          "outcome": "REBALANCE",
+          "r": 0.5406
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-01-26",
+          "exit_time": "2026-01-28",
+          "outcome": "SL",
+          "r": -1.0069
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-01-30",
+      "entry_time": "2026-02-02",
+      "exit_time": "2026-02-06",
+      "strongest": "NZD",
+      "weakest": "CAD",
+      "score_strong": 0.046319,
+      "score_weak": 0.010637,
+      "r": 0.1708,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2026-02-02",
+          "exit_time": "2026-02-06",
+          "outcome": "REBALANCE",
+          "r": 0.0065
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-02-02",
+          "exit_time": "2026-02-06",
+          "outcome": "REBALANCE",
+          "r": 0.335
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-02-13",
+      "strongest": "NZD",
+      "weakest": "JPY",
+      "score_strong": 0.050118,
+      "score_weak": 0.004975,
+      "r": -0.4769,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2026-02-09",
+          "exit_time": "2026-02-13",
+          "outcome": "REBALANCE",
+          "r": 0.0487
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-02-09",
+          "exit_time": "2026-02-10",
+          "outcome": "SL",
+          "r": -1.0026
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-02-13",
+      "entry_time": "2026-02-16",
+      "exit_time": "2026-02-20",
+      "strongest": "AUD",
+      "weakest": "GBP",
+      "score_strong": 0.05805,
+      "score_weak": 0.019579,
+      "r": 0.4237,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-02-16",
+          "exit_time": "2026-02-20",
+          "outcome": "REBALANCE",
+          "r": 0.0518
+        },
+        {
+          "currency": "GBP",
+          "role": "WEAK",
+          "pair": "GBP/USD",
+          "side": "SHORT",
+          "entry_time": "2026-02-16",
+          "exit_time": "2026-02-20",
+          "outcome": "REBALANCE",
+          "r": 0.7957
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-02-20",
+      "entry_time": "2026-02-23",
+      "exit_time": "2026-02-27",
+      "strongest": "AUD",
+      "weakest": "GBP",
+      "score_strong": 0.027862,
+      "score_weak": -0.010202,
+      "r": 0.1458,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-02-23",
+          "exit_time": "2026-02-27",
+          "outcome": "REBALANCE",
+          "r": 0.2714
+        },
+        {
+          "currency": "GBP",
+          "role": "WEAK",
+          "pair": "GBP/USD",
+          "side": "SHORT",
+          "entry_time": "2026-02-23",
+          "exit_time": "2026-02-27",
+          "outcome": "REBALANCE",
+          "r": 0.0203
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-02-27",
+      "entry_time": "2026-03-02",
+      "exit_time": "2026-03-06",
+      "strongest": "AUD",
+      "weakest": "GBP",
+      "score_strong": 0.020163,
+      "score_weak": -0.015871,
+      "r": -0.3407,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-03-02",
+          "exit_time": "2026-03-03",
+          "outcome": "SL",
+          "r": -1.0065
+        },
+        {
+          "currency": "GBP",
+          "role": "WEAK",
+          "pair": "GBP/USD",
+          "side": "SHORT",
+          "entry_time": "2026-03-02",
+          "exit_time": "2026-03-06",
+          "outcome": "REBALANCE",
+          "r": 0.325
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-03-06",
+      "entry_time": "2026-03-09",
+      "exit_time": "2026-03-13",
+      "strongest": "CAD",
+      "weakest": "NZD",
+      "score_strong": 0.005411,
+      "score_weak": -0.019293,
+      "r": -0.1193,
+      "legs": [
+        {
+          "currency": "CAD",
+          "role": "STRONG",
+          "pair": "USD/CAD",
+          "side": "SHORT",
+          "entry_time": "2026-03-09",
+          "exit_time": "2026-03-13",
+          "outcome": "SL",
+          "r": -1.0058
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-03-09",
+          "exit_time": "2026-03-13",
+          "outcome": "REBALANCE",
+          "r": 0.7672
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-03-13",
+      "entry_time": "2026-03-16",
+      "exit_time": "2026-03-20",
+      "strongest": "CAD",
+      "weakest": "JPY",
+      "score_strong": -0.007899,
+      "score_weak": -0.045191,
+      "r": -0.091,
+      "legs": [
+        {
+          "currency": "CAD",
+          "role": "STRONG",
+          "pair": "USD/CAD",
+          "side": "SHORT",
+          "entry_time": "2026-03-16",
+          "exit_time": "2026-03-20",
+          "outcome": "REBALANCE",
+          "r": -0.009
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-03-16",
+          "exit_time": "2026-03-20",
+          "outcome": "REBALANCE",
+          "r": -0.1729
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-03-20",
+      "entry_time": "2026-03-23",
+      "exit_time": "2026-03-27",
+      "strongest": "CAD",
+      "weakest": "JPY",
+      "score_strong": -0.001936,
+      "score_weak": -0.02682,
+      "r": -0.3281,
+      "legs": [
+        {
+          "currency": "CAD",
+          "role": "STRONG",
+          "pair": "USD/CAD",
+          "side": "SHORT",
+          "entry_time": "2026-03-23",
+          "exit_time": "2026-03-27",
+          "outcome": "SL",
+          "r": -1.0053
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-03-23",
+          "exit_time": "2026-03-27",
+          "outcome": "REBALANCE",
+          "r": 0.3491
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-03-27",
+      "entry_time": "2026-03-30",
+      "exit_time": "2026-04-03",
+      "strongest": "GBP",
+      "weakest": "NZD",
+      "score_strong": -0.015423,
+      "score_weak": -0.041725,
+      "r": 0.0249,
+      "legs": [
+        {
+          "currency": "GBP",
+          "role": "STRONG",
+          "pair": "GBP/USD",
+          "side": "LONG",
+          "entry_time": "2026-03-30",
+          "exit_time": "2026-04-03",
+          "outcome": "REBALANCE",
+          "r": -0.3294
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-03-30",
+          "exit_time": "2026-04-03",
+          "outcome": "REBALANCE",
+          "r": 0.3793
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-04-03",
+      "entry_time": "2026-04-06",
+      "exit_time": "2026-04-10",
+      "strongest": "EUR",
+      "weakest": "NZD",
+      "score_strong": -0.007627,
+      "score_weak": -0.035126,
+      "r": 0.1042,
+      "legs": [
+        {
+          "currency": "EUR",
+          "role": "STRONG",
+          "pair": "EUR/USD",
+          "side": "LONG",
+          "entry_time": "2026-04-06",
+          "exit_time": "2026-04-10",
+          "outcome": "REBALANCE",
+          "r": 1.2145
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-04-06",
+          "exit_time": "2026-04-08",
+          "outcome": "SL",
+          "r": -1.006
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-04-10",
+      "entry_time": "2026-04-13",
+      "exit_time": "2026-04-17",
+      "strongest": "EUR",
+      "weakest": "CAD",
+      "score_strong": 0.026571,
+      "score_weak": -0.00826,
+      "r": -0.2444,
+      "legs": [
+        {
+          "currency": "EUR",
+          "role": "STRONG",
+          "pair": "EUR/USD",
+          "side": "LONG",
+          "entry_time": "2026-04-13",
+          "exit_time": "2026-04-17",
+          "outcome": "REBALANCE",
+          "r": 0.5179
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-04-13",
+          "exit_time": "2026-04-14",
+          "outcome": "SL",
+          "r": -1.0068
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-04-17",
+      "entry_time": "2026-04-20",
+      "exit_time": "2026-04-24",
+      "strongest": "AUD",
+      "weakest": "CAD",
+      "score_strong": 0.021619,
+      "score_weak": 0.001677,
+      "r": 0.0139,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-04-20",
+          "exit_time": "2026-04-24",
+          "outcome": "REBALANCE",
+          "r": 0.1634
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-04-20",
+          "exit_time": "2026-04-24",
+          "outcome": "REBALANCE",
+          "r": -0.1357
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-04-24",
+      "entry_time": "2026-04-27",
+      "exit_time": "2026-05-04",
+      "strongest": "AUD",
+      "weakest": "JPY",
+      "score_strong": 0.039928,
+      "score_weak": 0.004885,
+      "r": -0.3983,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-04-27",
+          "exit_time": "2026-05-04",
+          "outcome": "REBALANCE",
+          "r": 0.2079
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-04-27",
+          "exit_time": "2026-04-30",
+          "outcome": "SL",
+          "r": -1.0046
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-05-04",
+      "entry_time": "2026-05-05",
+      "exit_time": "2026-05-11",
+      "strongest": "AUD",
+      "weakest": "JPY",
+      "score_strong": 0.040809,
+      "score_weak": 0.01494,
+      "r": 0.3488,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-05-05",
+          "exit_time": "2026-05-11",
+          "outcome": "REBALANCE",
+          "r": 0.7134
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-05-05",
+          "exit_time": "2026-05-11",
+          "outcome": "REBALANCE",
+          "r": -0.0158
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-05-11",
+      "entry_time": "2026-05-12",
+      "exit_time": "2026-05-18",
+      "strongest": "AUD",
+      "weakest": "EUR",
+      "score_strong": 0.026246,
+      "score_weak": 0.004844,
+      "r": 0.0034,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-05-12",
+          "exit_time": "2026-05-18",
+          "outcome": "SL",
+          "r": -1.0065
+        },
+        {
+          "currency": "EUR",
+          "role": "WEAK",
+          "pair": "EUR/USD",
+          "side": "SHORT",
+          "entry_time": "2026-05-12",
+          "exit_time": "2026-05-18",
+          "outcome": "REBALANCE",
+          "r": 1.0132
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-05-18",
+      "entry_time": "2026-05-19",
+      "exit_time": "2026-05-25",
+      "strongest": "AUD",
+      "weakest": "EUR",
+      "score_strong": 4.2e-05,
+      "score_weak": -0.009197,
+      "r": 0.0681,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-05-19",
+          "exit_time": "2026-05-25",
+          "outcome": "REBALANCE",
+          "r": 0.0452
+        },
+        {
+          "currency": "EUR",
+          "role": "WEAK",
+          "pair": "EUR/USD",
+          "side": "SHORT",
+          "entry_time": "2026-05-19",
+          "exit_time": "2026-05-25",
+          "outcome": "REBALANCE",
+          "r": 0.091
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-05-25",
+      "entry_time": "2026-05-26",
+      "exit_time": "2026-06-01",
+      "strongest": "AUD",
+      "weakest": "CAD",
+      "score_strong": 0.003707,
+      "score_weak": -0.009627,
+      "r": 0.1352,
+      "legs": [
+        {
+          "currency": "AUD",
+          "role": "STRONG",
+          "pair": "AUD/USD",
+          "side": "LONG",
+          "entry_time": "2026-05-26",
+          "exit_time": "2026-06-01",
+          "outcome": "REBALANCE",
+          "r": -0.1344
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-05-26",
+          "exit_time": "2026-06-01",
+          "outcome": "REBALANCE",
+          "r": 0.4048
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-06-01",
+      "entry_time": "2026-06-02",
+      "exit_time": "2026-06-08",
+      "strongest": "NZD",
+      "weakest": "CAD",
+      "score_strong": 0.010422,
+      "score_weak": -0.015846,
+      "r": 0.0914,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2026-06-02",
+          "exit_time": "2026-06-05",
+          "outcome": "SL",
+          "r": -1.0066
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-06-02",
+          "exit_time": "2026-06-08",
+          "outcome": "REBALANCE",
+          "r": 1.1894
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-06-08",
+      "entry_time": "2026-06-09",
+      "exit_time": "2026-06-15",
+      "strongest": "JPY",
+      "weakest": "AUD",
+      "score_strong": -0.018781,
+      "score_weak": -0.028155,
+      "r": -0.2254,
+      "legs": [
+        {
+          "currency": "JPY",
+          "role": "STRONG",
+          "pair": "USD/JPY",
+          "side": "SHORT",
+          "entry_time": "2026-06-09",
+          "exit_time": "2026-06-15",
+          "outcome": "REBALANCE",
+          "r": -0.2055
+        },
+        {
+          "currency": "AUD",
+          "role": "WEAK",
+          "pair": "AUD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-06-09",
+          "exit_time": "2026-06-15",
+          "outcome": "REBALANCE",
+          "r": -0.2454
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-06-15",
+      "entry_time": "2026-06-16",
+      "exit_time": "2026-06-22",
+      "strongest": "GBP",
+      "weakest": "CAD",
+      "score_strong": -0.001608,
+      "score_weak": -0.018268,
+      "r": 0.2289,
+      "legs": [
+        {
+          "currency": "GBP",
+          "role": "STRONG",
+          "pair": "GBP/USD",
+          "side": "LONG",
+          "entry_time": "2026-06-16",
+          "exit_time": "2026-06-17",
+          "outcome": "SL",
+          "r": -1.0054
+        },
+        {
+          "currency": "CAD",
+          "role": "WEAK",
+          "pair": "USD/CAD",
+          "side": "LONG",
+          "entry_time": "2026-06-16",
+          "exit_time": "2026-06-22",
+          "outcome": "REBALANCE",
+          "r": 1.4633
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-06-22",
+      "entry_time": "2026-06-23",
+      "exit_time": "2026-06-29",
+      "strongest": "JPY",
+      "weakest": "CHF",
+      "score_strong": -0.01685,
+      "score_weak": -0.033337,
+      "r": -0.1958,
+      "legs": [
+        {
+          "currency": "JPY",
+          "role": "STRONG",
+          "pair": "USD/JPY",
+          "side": "SHORT",
+          "entry_time": "2026-06-23",
+          "exit_time": "2026-06-29",
+          "outcome": "REBALANCE",
+          "r": -0.282
+        },
+        {
+          "currency": "CHF",
+          "role": "WEAK",
+          "pair": "USD/CHF",
+          "side": "LONG",
+          "entry_time": "2026-06-23",
+          "exit_time": "2026-06-29",
+          "outcome": "REBALANCE",
+          "r": -0.1096
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-06-29",
+      "entry_time": "2026-06-30",
+      "exit_time": "2026-07-06",
+      "strongest": "JPY",
+      "weakest": "NZD",
+      "score_strong": -0.014197,
+      "score_weak": -0.047613,
+      "r": -0.3553,
+      "legs": [
+        {
+          "currency": "JPY",
+          "role": "STRONG",
+          "pair": "USD/JPY",
+          "side": "SHORT",
+          "entry_time": "2026-06-30",
+          "exit_time": "2026-07-06",
+          "outcome": "REBALANCE",
+          "r": -0.1464
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-06-30",
+          "exit_time": "2026-07-06",
+          "outcome": "REBALANCE",
+          "r": -0.5641
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-07-06",
+      "entry_time": "2026-07-07",
+      "exit_time": "2026-07-13",
+      "strongest": "GBP",
+      "weakest": "NZD",
+      "score_strong": 0.003838,
+      "score_weak": -0.018505,
+      "r": -0.637,
+      "legs": [
+        {
+          "currency": "GBP",
+          "role": "STRONG",
+          "pair": "GBP/USD",
+          "side": "LONG",
+          "entry_time": "2026-07-07",
+          "exit_time": "2026-07-13",
+          "outcome": "REBALANCE",
+          "r": -0.2655
+        },
+        {
+          "currency": "NZD",
+          "role": "WEAK",
+          "pair": "NZD/USD",
+          "side": "SHORT",
+          "entry_time": "2026-07-07",
+          "exit_time": "2026-07-10",
+          "outcome": "SL",
+          "r": -1.0084
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-07-13",
+      "entry_time": "2026-07-14",
+      "exit_time": "2026-07-20",
+      "strongest": "GBP",
+      "weakest": "CHF",
+      "score_strong": -0.00495,
+      "score_weak": -0.025228,
+      "r": -0.1925,
+      "legs": [
+        {
+          "currency": "GBP",
+          "role": "STRONG",
+          "pair": "GBP/USD",
+          "side": "LONG",
+          "entry_time": "2026-07-14",
+          "exit_time": "2026-07-20",
+          "outcome": "REBALANCE",
+          "r": 0.6228
+        },
+        {
+          "currency": "CHF",
+          "role": "WEAK",
+          "pair": "USD/CHF",
+          "side": "LONG",
+          "entry_time": "2026-07-14",
+          "exit_time": "2026-07-15",
+          "outcome": "SL",
+          "r": -1.0079
+        }
+      ]
+    },
+    {
+      "signal_time": "2026-07-20",
+      "entry_time": "2026-07-21",
+      "exit_time": "2026-07-27",
+      "strongest": "NZD",
+      "weakest": "JPY",
+      "score_strong": 0.021948,
+      "score_weak": -0.005555,
+      "r": 0.0441,
+      "legs": [
+        {
+          "currency": "NZD",
+          "role": "STRONG",
+          "pair": "NZD/USD",
+          "side": "LONG",
+          "entry_time": "2026-07-21",
+          "exit_time": "2026-07-27",
+          "outcome": "REBALANCE",
+          "r": -0.7142
+        },
+        {
+          "currency": "JPY",
+          "role": "WEAK",
+          "pair": "USD/JPY",
+          "side": "LONG",
+          "entry_time": "2026-07-21",
+          "exit_time": "2026-07-27",
+          "outcome": "REBALANCE",
+          "r": 0.8024
+        }
+      ]
+    }
+  ]
+}
