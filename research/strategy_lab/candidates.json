@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T22:03:55Z",
+  "updated_at_utc": "2026-07-31T22:33:56Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -115,6 +115,35 @@
       },
       "evidence_warning": "Only 400 H1 bars per pair (~16 calendar days); UTC/DST and session-regime stability are untested.",
       "next_action": "Preserve unchanged. Retest only on multi-year H1 data after verifying timestamp/session alignment; do not optimize hours on this sample."
+    },
+    {
+      "id": "LAB-007",
+      "name": "M15 EMA-Regime Pullback Reclaim",
+      "horizon": "scalping",
+      "risk_profile": "high",
+      "status": "RESEARCH_ONLY",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 52,
+        "wins": 22,
+        "losses": 30,
+        "win_rate_pct": 42.31,
+        "profit_factor": 1.077,
+        "total_r": 2.506,
+        "max_drawdown_r": 13.334
+      },
+      "cost_stress": {
+        "1.0_pip": {
+          "profit_factor": 1.355,
+          "total_r": 10.265
+        },
+        "2.0_pip": {
+          "profit_factor": 0.925,
+          "total_r": -2.655
+        }
+      },
+      "evidence_warning": "Only 500 M15 bars per pair and about 300 effective post-warmup bars; baseline edge disappears at 2.0 pip cost.",
+      "next_action": "Freeze rules and retest on multi-year M15 data with OOS, pair-level stability, neighbor parameters and realistic time-varying spreads."
     }
   ]
 }
