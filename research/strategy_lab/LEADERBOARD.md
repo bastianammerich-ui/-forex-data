@@ -29,5 +29,6 @@ No newly researched strategy is qualified for promotion yet.
 | LAB-001 H1 Volatility-Compression Breakout | Intraday, medium risk | Smoke only | 24 | 0.424 | -11.433 | Rejected in current form; sample too short for broader inference |\n| LAB-002 H4 EMA Pullback Continuation | Swing, low risk | Smoke only | 21 | 0.268 | -12.352 | Rejected in current form; no tuning on short sample |\n| LAB-003 Daily 60-Day Time-Series Momentum | Swing/position, low risk | Smoke only | 40 | 0.366 | -14.147 | Rejected on short sample; requires 10+ years before reconsideration |
 | LAB-004 Weekly Cross-Sectional Currency Strength Portfolio | Swing/portfolio, medium risk | Smoke only | 40 | 0.658 | -1.852 | Rejected in current form; low DD but no positive edge after costs |
 | LAB-005 H4 Regime-Filtered Bollinger Mean Reversion | Intraday/swing, medium risk | Smoke only | 8 | 0.700 | -1.558 | Rejected/insufficient; only eight signals and no positive edge |
+| LAB-006 London H1 Opening-Range Breakout | Intraday/session, high risk | Smoke only | 77 | 0.856 | -6.848 | Rejected in current form; negative after costs and short session sample |
 
 Existing externally developed candidates such as A-V2.2, v3, and Dave/CLS remain outside this new-lab ranking until imported with complete provenance and comparable test records.
