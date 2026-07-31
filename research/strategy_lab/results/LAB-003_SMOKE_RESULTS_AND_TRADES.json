@@ -1,0 +1,464 @@
+{
+  "candidate_id": "LAB-003",
+  "name": "Daily 60-Day Time-Series Momentum",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "available_daily_bars_per_pair": 300,
+  "warning": "Less than one year of weekday-filtered daily data; not evidence of a durable momentum premium.",
+  "data_quality": {
+    "rejected_candles": 1,
+    "incomplete_candles": 28,
+    "warning_count": 1,
+    "warnings": [
+      {
+        "interval": "1day",
+        "pair": "NZD/USD",
+        "warning": "rejected_candles",
+        "count": 1
+      }
+    ]
+  },
+  "assumptions": {
+    "spread": "1.5 pip round-turn approximation",
+    "slippage": "not separately modeled",
+    "weekends": "excluded",
+    "rebalance": "every 20 trading bars",
+    "intended_account_risk": "0.5% per position"
+  },
+  "aggregate": {
+    "trades": 40,
+    "wins": 11,
+    "losses": 29,
+    "win_rate_pct": 27.5,
+    "profit_factor": 0.366,
+    "total_r": -14.147,
+    "max_drawdown_r": 14.147
+  },
+  "per_pair": {
+    "EUR/USD": {
+      "trades": 6,
+      "wins": 2,
+      "losses": 4,
+      "win_rate_pct": 33.33,
+      "profit_factor": 0.213,
+      "total_r": -2.55,
+      "max_drawdown_r": 2.55
+    },
+    "GBP/USD": {
+      "trades": 6,
+      "wins": 0,
+      "losses": 6,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "total_r": -4.928,
+      "max_drawdown_r": 4.928
+    },
+    "USD/JPY": {
+      "trades": 6,
+      "wins": 3,
+      "losses": 3,
+      "win_rate_pct": 50.0,
+      "profit_factor": 0.927,
+      "total_r": -0.204,
+      "max_drawdown_r": 1.781
+    },
+    "USD/CHF": {
+      "trades": 6,
+      "wins": 2,
+      "losses": 4,
+      "win_rate_pct": 33.33,
+      "profit_factor": 0.471,
+      "total_r": -1.268,
+      "max_drawdown_r": 2.111
+    },
+    "USD/CAD": {
+      "trades": 6,
+      "wins": 2,
+      "losses": 4,
+      "win_rate_pct": 33.33,
+      "profit_factor": 0.992,
+      "total_r": -0.022,
+      "max_drawdown_r": 1.58
+    },
+    "AUD/USD": {
+      "trades": 7,
+      "wins": 2,
+      "losses": 5,
+      "win_rate_pct": 28.57,
+      "profit_factor": 0.269,
+      "total_r": -2.718,
+      "max_drawdown_r": 2.867
+    },
+    "NZD/USD": {
+      "trades": 3,
+      "wins": 0,
+      "losses": 3,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "total_r": -2.457,
+      "max_drawdown_r": 2.457
+    }
+  },
+  "trades": [
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "signal_time": "2026-02-03",
+      "entry_time": "2026-02-04",
+      "exit_time": "2026-03-04",
+      "outcome": "REBALANCE",
+      "r": 0.2774
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "signal_time": "2026-02-05",
+      "entry_time": "2026-02-06",
+      "exit_time": "2026-03-06",
+      "outcome": "REBALANCE",
+      "r": 0.0132
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-03-03",
+      "outcome": "SL",
+      "r": -1.0028
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-03-03",
+      "outcome": "SL",
+      "r": -1.0024
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "SHORT",
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-03-09",
+      "outcome": "REBALANCE",
+      "r": 0.3025
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-03-09",
+      "outcome": "REBALANCE",
+      "r": 0.149
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "signal_time": "2026-02-06",
+      "entry_time": "2026-02-09",
+      "exit_time": "2026-03-03",
+      "outcome": "SL",
+      "r": -1.004
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "signal_time": "2026-03-04",
+      "entry_time": "2026-03-05",
+      "exit_time": "2026-04-02",
+      "outcome": "REBALANCE",
+      "r": 0.5088
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "signal_time": "2026-03-04",
+      "entry_time": "2026-03-05",
+      "exit_time": "2026-03-23",
+      "outcome": "SL",
+      "r": -1.0045
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "signal_time": "2026-03-05",
+      "entry_time": "2026-03-06",
+      "exit_time": "2026-04-03",
+      "outcome": "REBALANCE",
+      "r": 0.5052
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "signal_time": "2026-03-09",
+      "entry_time": "2026-03-10",
+      "exit_time": "2026-03-27",
+      "outcome": "SL",
+      "r": -1.0041
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "SHORT",
+      "signal_time": "2026-03-10",
+      "entry_time": "2026-03-11",
+      "exit_time": "2026-03-24",
+      "outcome": "SL",
+      "r": -1.0038
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-03-10",
+      "entry_time": "2026-03-11",
+      "exit_time": "2026-03-30",
+      "outcome": "SL",
+      "r": -1.0029
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "signal_time": "2026-03-25",
+      "entry_time": "2026-03-26",
+      "exit_time": "2026-04-23",
+      "outcome": "REBALANCE",
+      "r": -0.5761
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "signal_time": "2026-03-30",
+      "entry_time": "2026-03-31",
+      "exit_time": "2026-04-14",
+      "outcome": "SL",
+      "r": -1.0039
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-03-31",
+      "entry_time": "2026-04-01",
+      "exit_time": "2026-04-29",
+      "outcome": "REBALANCE",
+      "r": 0.8516
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "signal_time": "2026-04-01",
+      "entry_time": "2026-04-02",
+      "exit_time": "2026-04-30",
+      "outcome": "REBALANCE",
+      "r": -0.8418
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "signal_time": "2026-04-03",
+      "entry_time": "2026-04-06",
+      "exit_time": "2026-04-14",
+      "outcome": "SL",
+      "r": -1.003
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "signal_time": "2026-04-06",
+      "entry_time": "2026-04-07",
+      "exit_time": "2026-04-30",
+      "outcome": "SL",
+      "r": -1.0022
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "LONG",
+      "signal_time": "2026-04-15",
+      "entry_time": "2026-04-16",
+      "exit_time": "2026-05-14",
+      "outcome": "REBALANCE",
+      "r": -0.5992
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "signal_time": "2026-04-15",
+      "entry_time": "2026-04-16",
+      "exit_time": "2026-05-14",
+      "outcome": "REBALANCE",
+      "r": -0.1029
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-04-30",
+      "entry_time": "2026-05-01",
+      "exit_time": "2026-05-29",
+      "outcome": "REBALANCE",
+      "r": -0.0909
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "SHORT",
+      "signal_time": "2026-05-01",
+      "entry_time": "2026-05-04",
+      "exit_time": "2026-06-01",
+      "outcome": "REBALANCE",
+      "r": -0.7793
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "signal_time": "2026-05-15",
+      "entry_time": "2026-05-18",
+      "exit_time": "2026-06-15",
+      "outcome": "REBALANCE",
+      "r": 0.1826
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "signal_time": "2026-05-22",
+      "entry_time": "2026-05-25",
+      "exit_time": "2026-06-22",
+      "outcome": "REBALANCE",
+      "r": 2.4576
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "signal_time": "2026-05-29",
+      "entry_time": "2026-06-01",
+      "exit_time": "2026-06-18",
+      "outcome": "SL",
+      "r": -1.003
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-06-01",
+      "entry_time": "2026-06-02",
+      "exit_time": "2026-06-11",
+      "outcome": "SL",
+      "r": -1.0042
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "signal_time": "2026-06-02",
+      "entry_time": "2026-06-03",
+      "exit_time": "2026-07-01",
+      "outcome": "REBALANCE",
+      "r": 1.7985
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "signal_time": "2026-06-12",
+      "entry_time": "2026-06-15",
+      "exit_time": "2026-07-13",
+      "outcome": "REBALANCE",
+      "r": 1.1165
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-06-12",
+      "entry_time": "2026-06-15",
+      "exit_time": "2026-06-26",
+      "outcome": "SL",
+      "r": -1.0047
+    },
+    {
+      "pair": "NZD/USD",
+      "side": "SHORT",
+      "signal_time": "2026-06-17",
+      "entry_time": "2026-06-18",
+      "exit_time": "2026-07-16",
+      "outcome": "REBALANCE",
+      "r": -0.4486
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "signal_time": "2026-06-19",
+      "entry_time": "2026-06-22",
+      "exit_time": "2026-07-10",
+      "outcome": "SL",
+      "r": -1.0031
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "signal_time": "2026-06-23",
+      "entry_time": "2026-06-24",
+      "exit_time": "2026-07-15",
+      "outcome": "SL",
+      "r": -1.0042
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "SHORT",
+      "signal_time": "2026-06-29",
+      "entry_time": "2026-06-30",
+      "exit_time": "2026-07-28",
+      "outcome": "REBALANCE",
+      "r": -0.6163
+    },
+    {
+      "pair": "USD/JPY",
+      "side": "LONG",
+      "signal_time": "2026-07-02",
+      "entry_time": "2026-07-03",
+      "exit_time": "2026-07-30",
+      "outcome": "SL",
+      "r": -1.0037
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "signal_time": "2026-07-13",
+      "entry_time": "2026-07-14",
+      "exit_time": "2026-07-15",
+      "outcome": "SL",
+      "r": -1.0037
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "signal_time": "2026-07-14",
+      "entry_time": "2026-07-15",
+      "exit_time": "2026-07-30",
+      "outcome": "REBALANCE",
+      "r": -0.6363
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "signal_time": "2026-07-14",
+      "entry_time": "2026-07-15",
+      "exit_time": "2026-07-30",
+      "outcome": "REBALANCE",
+      "r": -0.2864
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "signal_time": "2026-07-16",
+      "entry_time": "2026-07-17",
+      "exit_time": "2026-07-30",
+      "outcome": "REBALANCE",
+      "r": -0.0739
+    },
+    {
+      "pair": "USD/CAD",
+      "side": "LONG",
+      "signal_time": "2026-07-16",
+      "entry_time": "2026-07-17",
+      "exit_time": "2026-07-30",
+      "outcome": "REBALANCE",
+      "r": -0.1982
+    }
+  ]
+}
