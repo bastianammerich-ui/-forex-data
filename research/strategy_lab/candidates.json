@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T21:33:55Z",
+  "updated_at_utc": "2026-07-31T22:03:55Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -96,6 +96,25 @@
       },
       "evidence_warning": "Only 299 complete H4 bars per pair (~50 calendar days) and eight signals; no defensible regime inference.",
       "next_action": "Do not tune thresholds on this sample. Retest the frozen rules only on multi-year data with OOS and cost stress."
+    },
+    {
+      "id": "LAB-006",
+      "name": "London H1 Opening-Range Breakout",
+      "horizon": "intraday",
+      "risk_profile": "high",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 77,
+        "wins": 32,
+        "losses": 45,
+        "win_rate_pct": 41.56,
+        "profit_factor": 0.856,
+        "total_r": -6.848,
+        "max_drawdown_r": 20.083
+      },
+      "evidence_warning": "Only 400 H1 bars per pair (~16 calendar days); UTC/DST and session-regime stability are untested.",
+      "next_action": "Preserve unchanged. Retest only on multi-year H1 data after verifying timestamp/session alignment; do not optimize hours on this sample."
     }
   ]
 }
