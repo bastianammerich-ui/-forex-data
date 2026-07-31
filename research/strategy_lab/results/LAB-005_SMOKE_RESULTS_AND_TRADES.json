@@ -1,0 +1,194 @@
+{
+  "candidate_id": "LAB-005",
+  "name": "H4 Regime-Filtered Bollinger Mean Reversion",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "warning": "Only 299 complete H4 bars per pair (~50 calendar days); insufficient for regime stability.",
+  "data_quality": {
+    "rejected_candles": 1,
+    "incomplete_candles": 28,
+    "warning_count": 1,
+    "warnings": [
+      {
+        "interval": "1day",
+        "pair": "NZD/USD",
+        "warning": "rejected_candles",
+        "count": 1
+      }
+    ]
+  },
+  "assumptions": {
+    "signal": "close outside BB(20,2), RSI14 extreme 30/70, ADX14 <= 20",
+    "entry": "next H4 open",
+    "stop": "1.5 ATR14",
+    "target": "signal-time BB20 mean",
+    "maximum_holding": "12 H4 bars",
+    "cost": "1.5 pip round-turn approximation",
+    "slippage": "not separately modeled",
+    "intended_account_risk": "0.5% per position"
+  },
+  "aggregate": {
+    "trades": 8,
+    "wins": 2,
+    "losses": 6,
+    "win_rate_pct": 25.0,
+    "profit_factor": 0.7,
+    "total_r": -1.558,
+    "max_drawdown_r": 2.136
+  },
+  "per_pair": {
+    "EUR/USD": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "total_r": -1.023,
+      "max_drawdown_r": 1.023
+    },
+    "GBP/USD": {
+      "trades": 2,
+      "wins": 0,
+      "losses": 2,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "total_r": -2.049,
+      "max_drawdown_r": 2.049
+    },
+    "USD/JPY": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": null,
+      "profit_factor": null,
+      "total_r": 0,
+      "max_drawdown_r": 0
+    },
+    "USD/CHF": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "win_rate_pct": 33.33,
+      "profit_factor": 1.869,
+      "total_r": 0.942,
+      "max_drawdown_r": 1.038
+    },
+    "USD/CAD": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate_pct": null,
+      "profit_factor": null,
+      "total_r": 0,
+      "max_drawdown_r": 0
+    },
+    "AUD/USD": {
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "win_rate_pct": 100.0,
+      "profit_factor": null,
+      "total_r": 1.601,
+      "max_drawdown_r": 0
+    },
+    "NZD/USD": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "win_rate_pct": 0.0,
+      "profit_factor": 0.0,
+      "total_r": -1.03,
+      "max_drawdown_r": 1.03
+    }
+  },
+  "trades": [
+    {
+      "pair": "NZD/USD",
+      "side": "LONG",
+      "signal_time": "2026-06-22 23:00:00",
+      "entry_time": "2026-06-23 03:00:00",
+      "exit_time": "2026-06-23 11:00:00",
+      "outcome": "SL",
+      "signal_adx": 17.06,
+      "signal_rsi": 29.62,
+      "r": -1.0297
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "SHORT",
+      "signal_time": "2026-06-29 15:00:00",
+      "entry_time": "2026-06-29 19:00:00",
+      "exit_time": "2026-07-01 15:00:00",
+      "outcome": "SL",
+      "signal_adx": 19.29,
+      "signal_rsi": 70.55,
+      "r": -1.0258
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "LONG",
+      "signal_time": "2026-07-02 11:00:00",
+      "entry_time": "2026-07-02 15:00:00",
+      "exit_time": "2026-07-04 15:00:00",
+      "outcome": "TIME",
+      "signal_adx": 17.26,
+      "signal_rsi": 28.82,
+      "r": -0.0457
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "signal_time": "2026-07-13 15:00:00",
+      "entry_time": "2026-07-13 19:00:00",
+      "exit_time": "2026-07-14 11:00:00",
+      "outcome": "MEAN",
+      "signal_adx": 10.97,
+      "signal_rsi": 72.91,
+      "r": 2.0256
+    },
+    {
+      "pair": "USD/CHF",
+      "side": "SHORT",
+      "signal_time": "2026-07-21 15:00:00",
+      "entry_time": "2026-07-21 19:00:00",
+      "exit_time": "2026-07-22 15:00:00",
+      "outcome": "SL",
+      "signal_adx": 15.81,
+      "signal_rsi": 71.64,
+      "r": -1.0378
+    },
+    {
+      "pair": "GBP/USD",
+      "side": "LONG",
+      "signal_time": "2026-07-21 19:00:00",
+      "entry_time": "2026-07-21 23:00:00",
+      "exit_time": "2026-07-23 11:00:00",
+      "outcome": "SL",
+      "signal_adx": 17.19,
+      "signal_rsi": 28.27,
+      "r": -1.0228
+    },
+    {
+      "pair": "AUD/USD",
+      "side": "LONG",
+      "signal_time": "2026-07-29 07:00:00",
+      "entry_time": "2026-07-29 11:00:00",
+      "exit_time": "2026-07-29 19:00:00",
+      "outcome": "MEAN",
+      "signal_adx": 18.42,
+      "signal_rsi": 29.62,
+      "r": 1.6011
+    },
+    {
+      "pair": "EUR/USD",
+      "side": "SHORT",
+      "signal_time": "2026-07-29 19:00:00",
+      "entry_time": "2026-07-29 23:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "SL",
+      "signal_adx": 18.18,
+      "signal_rsi": 71.38,
+      "r": -1.0226
+    }
+  ]
+}
