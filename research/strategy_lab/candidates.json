@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-07-31T23:33:57Z",
+  "updated_at_utc": "2026-08-01T00:03:57Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -179,6 +179,25 @@
       },
       "evidence_warning": "Only ~16 calendar days, but the large negative result is sufficient to reject this exact formulation as a smoke candidate.",
       "next_action": "Preserve as a negative benchmark. Do not repair with sample-specific filters."
+    },
+    {
+      "id": "LAB-009",
+      "name": "H4 Donchian 20/10 Trend Following",
+      "horizon": "swing",
+      "risk_profile": "low",
+      "status": "REJECTED_SMOKE_ONLY",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 73,
+        "wins": 23,
+        "losses": 50,
+        "win_rate_pct": 31.51,
+        "profit_factor": 0.885,
+        "total_r": -5.346,
+        "max_drawdown_r": 26.696
+      },
+      "evidence_warning": "Only ~50 calendar days, structurally inadequate for evaluating a slow convex trend-following strategy.",
+      "next_action": "Preserve frozen as benchmark and retest on 10+ years of independent H4 data; do not optimize on this sample."
     }
   ]
 }
