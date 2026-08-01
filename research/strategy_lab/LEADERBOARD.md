@@ -34,5 +34,6 @@ No newly researched strategy is qualified for promotion yet.
 | LAB-008 H1 Inside-Bar Trend Breakout | Intraday/breakout, medium risk | Smoke only | 124 | 0.368 | -67.963 | Rejected decisively; no sample-specific repair |
 | LAB-009 H4 Donchian 20/10 Trend Following | Swing/trend, low risk | Smoke only | 73 | 0.885 | -5.346 | Rejected on smoke sample; frozen for future long-history test |
 | LAB-010 H1 Rolling-Hedge Pair Mean Reversion | Relative value/stat-arb, medium risk | Smoke only | 45 | 0.254 | -64.320 | Rejected decisively after stable 1-sigma risk normalization |
+| LAB-011 Asia-Range Liquidity-Sweep Fade | Intraday/session, medium risk | Smoke only | 59 | 0.626 | -13.211 | Rejected; unfiltered sweep/reentry has no edge in smoke sample |
 
 Existing externally developed candidates such as A-V2.2, v3, and Dave/CLS remain outside this new-lab ranking until imported with complete provenance and comparable test records.
