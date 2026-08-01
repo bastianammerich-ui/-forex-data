@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-08-01T00:03:57Z",
+  "updated_at_utc": "2026-08-01T00:33:58Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -198,6 +198,25 @@
       },
       "evidence_warning": "Only ~50 calendar days, structurally inadequate for evaluating a slow convex trend-following strategy.",
       "next_action": "Preserve frozen as benchmark and retest on 10+ years of independent H4 data; do not optimize on this sample."
+    },
+    {
+      "id": "LAB-010",
+      "name": "H1 Rolling-Hedge Pair Mean Reversion",
+      "horizon": "intraday_swing",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 45,
+        "wins": 9,
+        "losses": 36,
+        "win_rate_pct": 20,
+        "profit_factor": 0.254,
+        "total_r": -64.32,
+        "max_drawdown_r": 71.883
+      },
+      "evidence_warning": "Only ~16 calendar days and no stationarity proof; valid 1-sigma-normalized result is decisively negative.",
+      "next_action": "Preserve as negative benchmark. Future stat-arb work must test stationarity and use long OOS data before trading."
     }
   ]
 }
