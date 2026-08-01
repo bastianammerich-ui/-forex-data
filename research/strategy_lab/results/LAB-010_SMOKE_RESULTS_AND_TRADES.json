@@ -1,0 +1,570 @@
+{
+  "candidate_id": "LAB-010",
+  "name": "H1 Rolling-Hedge Pair Mean Reversion",
+  "test_class": "SMOKE_TEST_ONLY",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "warning": "Only 400 H1 bars per pair (~16 calendar days); rolling regression and spread stationarity cannot be validated.",
+  "data_quality": {
+    "rejected_candles": 1,
+    "incomplete_candles": 28,
+    "warning_count": 1,
+    "warnings": [
+      {
+        "interval": "1day",
+        "pair": "NZD/USD",
+        "warning": "rejected_candles",
+        "count": 1
+      }
+    ]
+  },
+  "assumptions": {
+    "spreads": [
+      "EUR/USD~GBP/USD",
+      "AUD/USD~NZD/USD",
+      "USD/CHF~USD/CAD"
+    ],
+    "model": "60-bar OLS log-price hedge; residual Z-score",
+    "entry": "next H1 open after |Z| >= 2",
+    "target": "frozen-model Z=0 close",
+    "stop": "frozen-model |Z|=3.5 close",
+    "maximum_holding": "48 H1 bars",
+    "cost": "1.5 pip round-turn per leg, beta weighted",
+    "slippage": "not separately modeled",
+    "intended_account_risk": "0.25% per spread"
+  },
+  "aggregate": {
+    "trades": 45,
+    "wins": 9,
+    "losses": 36,
+    "win_rate_pct": 20.0,
+    "profit_factor": 0.254,
+    "total_r": -64.32,
+    "max_drawdown_r": 71.883
+  },
+  "per_spread": {
+    "EUR/USD ~ GBP/USD": {
+      "trades": 15,
+      "wins": 3,
+      "losses": 12,
+      "win_rate_pct": 20.0,
+      "profit_factor": 0.226,
+      "total_r": -19.594,
+      "max_drawdown_r": 21.206
+    },
+    "AUD/USD ~ NZD/USD": {
+      "trades": 15,
+      "wins": 3,
+      "losses": 12,
+      "win_rate_pct": 20.0,
+      "profit_factor": 0.316,
+      "total_r": -17.419,
+      "max_drawdown_r": 20.857
+    },
+    "USD/CHF ~ USD/CAD": {
+      "trades": 15,
+      "wins": 3,
+      "losses": 12,
+      "win_rate_pct": 20.0,
+      "profit_factor": 0.228,
+      "total_r": -27.307,
+      "max_drawdown_r": 29.819
+    }
+  },
+  "trades": [
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-19 21:00:00",
+      "entry_time": "2026-07-19 22:00:00",
+      "exit_time": "2026-07-19 22:00:00",
+      "outcome": "MEAN",
+      "signal_z": 2.782,
+      "hedge_beta": 0.6131,
+      "r": 3.4379
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-19 21:00:00",
+      "entry_time": "2026-07-19 22:00:00",
+      "exit_time": "2026-07-20 04:00:00",
+      "outcome": "MEAN",
+      "signal_z": 2.541,
+      "hedge_beta": 0.079,
+      "r": 2.5122
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-20 00:00:00",
+      "entry_time": "2026-07-20 01:00:00",
+      "exit_time": "2026-07-20 04:00:00",
+      "outcome": "MEAN",
+      "signal_z": -2.06,
+      "hedge_beta": 0.4561,
+      "r": 1.6122
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-20 06:00:00",
+      "entry_time": "2026-07-20 07:00:00",
+      "exit_time": "2026-07-20 09:00:00",
+      "outcome": "SL",
+      "signal_z": -2.282,
+      "hedge_beta": 0.2224,
+      "r": -2.8281
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 08:00:00",
+      "entry_time": "2026-07-20 09:00:00",
+      "exit_time": "2026-07-20 09:00:00",
+      "outcome": "SL",
+      "signal_z": 2.753,
+      "hedge_beta": 0.7348,
+      "r": -2.8138
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 10:00:00",
+      "entry_time": "2026-07-20 11:00:00",
+      "exit_time": "2026-07-20 11:00:00",
+      "outcome": "SL",
+      "signal_z": 3.664,
+      "hedge_beta": 0.8263,
+      "r": -3.8382
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-20 10:00:00",
+      "entry_time": "2026-07-20 11:00:00",
+      "exit_time": "2026-07-20 11:00:00",
+      "outcome": "MEAN",
+      "signal_z": -2.352,
+      "hedge_beta": 0.2502,
+      "r": 2.4779
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-20 11:00:00",
+      "entry_time": "2026-07-20 12:00:00",
+      "exit_time": "2026-07-20 15:00:00",
+      "outcome": "SL",
+      "signal_z": -2.456,
+      "hedge_beta": 0.3354,
+      "r": -2.379
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 14:00:00",
+      "entry_time": "2026-07-20 15:00:00",
+      "exit_time": "2026-07-20 15:00:00",
+      "outcome": "SL",
+      "signal_z": 2.76,
+      "hedge_beta": 1.037,
+      "r": -3.7165
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 15:00:00",
+      "entry_time": "2026-07-20 16:00:00",
+      "exit_time": "2026-07-20 16:00:00",
+      "outcome": "SL",
+      "signal_z": 2.566,
+      "hedge_beta": 0.5246,
+      "r": -2.684
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 16:00:00",
+      "entry_time": "2026-07-20 17:00:00",
+      "exit_time": "2026-07-20 18:00:00",
+      "outcome": "SL",
+      "signal_z": 3.43,
+      "hedge_beta": 1.0859,
+      "r": -1.1294
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-20 19:00:00",
+      "entry_time": "2026-07-20 20:00:00",
+      "exit_time": "2026-07-20 23:00:00",
+      "outcome": "SL",
+      "signal_z": 2.819,
+      "hedge_beta": 1.1097,
+      "r": -1.7273
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-21 10:00:00",
+      "entry_time": "2026-07-21 11:00:00",
+      "exit_time": "2026-07-21 14:00:00",
+      "outcome": "SL",
+      "signal_z": 2.036,
+      "hedge_beta": 0.9277,
+      "r": -2.2105
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-21 13:00:00",
+      "entry_time": "2026-07-21 14:00:00",
+      "exit_time": "2026-07-22 14:00:00",
+      "outcome": "SL",
+      "signal_z": 2.033,
+      "hedge_beta": 0.6942,
+      "r": -2.5518
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-21 15:00:00",
+      "entry_time": "2026-07-21 16:00:00",
+      "exit_time": "2026-07-23 03:00:00",
+      "outcome": "SL",
+      "signal_z": 2.836,
+      "hedge_beta": 0.8109,
+      "r": -1.5883
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-21 16:00:00",
+      "entry_time": "2026-07-21 17:00:00",
+      "exit_time": "2026-07-22 16:00:00",
+      "outcome": "SL",
+      "signal_z": 2.464,
+      "hedge_beta": 0.8659,
+      "r": -3.4101
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-22 21:00:00",
+      "entry_time": "2026-07-22 22:00:00",
+      "exit_time": "2026-07-23 03:00:00",
+      "outcome": "SL",
+      "signal_z": 3.3,
+      "hedge_beta": 1.173,
+      "r": -0.6692
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-23 04:00:00",
+      "entry_time": "2026-07-23 05:00:00",
+      "exit_time": "2026-07-23 14:00:00",
+      "outcome": "MEAN",
+      "signal_z": 3.008,
+      "hedge_beta": 0.2848,
+      "r": 3.319
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-23 04:00:00",
+      "entry_time": "2026-07-23 05:00:00",
+      "exit_time": "2026-07-23 13:00:00",
+      "outcome": "SL",
+      "signal_z": 2.214,
+      "hedge_beta": 1.052,
+      "r": -1.564
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-23 06:00:00",
+      "entry_time": "2026-07-23 07:00:00",
+      "exit_time": "2026-07-23 12:00:00",
+      "outcome": "MEAN",
+      "signal_z": 3.609,
+      "hedge_beta": 0.1643,
+      "r": 3.7689
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-23 14:00:00",
+      "entry_time": "2026-07-23 15:00:00",
+      "exit_time": "2026-07-23 16:00:00",
+      "outcome": "SL",
+      "signal_z": -2.351,
+      "hedge_beta": 0.2244,
+      "r": -1.545
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-23 14:00:00",
+      "entry_time": "2026-07-23 15:00:00",
+      "exit_time": "2026-07-25 15:00:00",
+      "outcome": "TIME",
+      "signal_z": 2.54,
+      "hedge_beta": 0.414,
+      "r": -1.0627
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-24 19:00:00",
+      "entry_time": "2026-07-24 20:00:00",
+      "exit_time": "2026-07-26 20:00:00",
+      "outcome": "TIME",
+      "signal_z": -2.117,
+      "hedge_beta": 0.7363,
+      "r": 0.3467
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-26 20:00:00",
+      "entry_time": "2026-07-26 21:00:00",
+      "exit_time": "2026-07-26 21:00:00",
+      "outcome": "SL",
+      "signal_z": -3.221,
+      "hedge_beta": 1.4281,
+      "r": -4.6978
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-26 21:00:00",
+      "entry_time": "2026-07-26 22:00:00",
+      "exit_time": "2026-07-26 22:00:00",
+      "outcome": "SL",
+      "signal_z": 2.542,
+      "hedge_beta": 0.3559,
+      "r": -1.6923
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-26 23:00:00",
+      "entry_time": "2026-07-27 00:00:00",
+      "exit_time": "2026-07-27 03:00:00",
+      "outcome": "SL",
+      "signal_z": 2.507,
+      "hedge_beta": 0.7584,
+      "r": -2.4246
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-26 23:00:00",
+      "entry_time": "2026-07-27 00:00:00",
+      "exit_time": "2026-07-27 02:00:00",
+      "outcome": "MEAN",
+      "signal_z": 2.296,
+      "hedge_beta": 0.8863,
+      "r": 1.2965
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-27 00:00:00",
+      "entry_time": "2026-07-27 01:00:00",
+      "exit_time": "2026-07-27 02:00:00",
+      "outcome": "SL",
+      "signal_z": -2.036,
+      "hedge_beta": 1.4629,
+      "r": -3.1069
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-27 06:00:00",
+      "entry_time": "2026-07-27 07:00:00",
+      "exit_time": "2026-07-27 08:00:00",
+      "outcome": "SL",
+      "signal_z": -2.01,
+      "hedge_beta": 3.4848,
+      "r": -7.9527
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 08:00:00",
+      "entry_time": "2026-07-27 09:00:00",
+      "exit_time": "2026-07-27 10:00:00",
+      "outcome": "SL",
+      "signal_z": 2.678,
+      "hedge_beta": 1.1412,
+      "r": -2.3668
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 11:00:00",
+      "entry_time": "2026-07-27 12:00:00",
+      "exit_time": "2026-07-27 12:00:00",
+      "outcome": "SL",
+      "signal_z": 3.367,
+      "hedge_beta": 1.1892,
+      "r": -4.2632
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 11:00:00",
+      "entry_time": "2026-07-27 12:00:00",
+      "exit_time": "2026-07-27 12:00:00",
+      "outcome": "SL",
+      "signal_z": 2.878,
+      "hedge_beta": 1.2551,
+      "r": -2.5046
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-27 12:00:00",
+      "entry_time": "2026-07-27 13:00:00",
+      "exit_time": "2026-07-27 15:00:00",
+      "outcome": "MEAN",
+      "signal_z": -3.316,
+      "hedge_beta": 1.9789,
+      "r": 3.0751
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 14:00:00",
+      "entry_time": "2026-07-27 15:00:00",
+      "exit_time": "2026-07-27 18:00:00",
+      "outcome": "SL",
+      "signal_z": 2.428,
+      "hedge_beta": 1.0854,
+      "r": -1.5641
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 15:00:00",
+      "entry_time": "2026-07-27 16:00:00",
+      "exit_time": "2026-07-27 16:00:00",
+      "outcome": "SL",
+      "signal_z": 3.225,
+      "hedge_beta": 1.2109,
+      "r": -2.5444
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 18:00:00",
+      "entry_time": "2026-07-27 19:00:00",
+      "exit_time": "2026-07-27 23:00:00",
+      "outcome": "SL",
+      "signal_z": 2.931,
+      "hedge_beta": 0.8923,
+      "r": -1.282
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-27 19:00:00",
+      "entry_time": "2026-07-27 20:00:00",
+      "exit_time": "2026-07-28 16:00:00",
+      "outcome": "SL",
+      "signal_z": 2.391,
+      "hedge_beta": 0.8309,
+      "r": -2.2263
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-28 17:00:00",
+      "entry_time": "2026-07-28 18:00:00",
+      "exit_time": "2026-07-29 06:00:00",
+      "outcome": "SL",
+      "signal_z": 3.034,
+      "hedge_beta": 0.5914,
+      "r": -1.0477
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-29 03:00:00",
+      "entry_time": "2026-07-29 04:00:00",
+      "exit_time": "2026-07-29 05:00:00",
+      "outcome": "SL",
+      "signal_z": -3.478,
+      "hedge_beta": 0.6049,
+      "r": -0.6382
+    },
+    {
+      "pair_spread": "AUD/USD ~ NZD/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-29 06:00:00",
+      "entry_time": "2026-07-29 07:00:00",
+      "exit_time": "2026-07-29 16:00:00",
+      "outcome": "SL",
+      "signal_z": -2.737,
+      "hedge_beta": 0.6163,
+      "r": -1.4797
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "SHORT_SPREAD",
+      "signal_time": "2026-07-29 20:00:00",
+      "entry_time": "2026-07-29 21:00:00",
+      "exit_time": "2026-07-30 00:00:00",
+      "outcome": "SL",
+      "signal_z": 2.273,
+      "hedge_beta": 0.7522,
+      "r": -1.7662
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-30 12:00:00",
+      "entry_time": "2026-07-30 13:00:00",
+      "exit_time": "2026-07-30 15:00:00",
+      "outcome": "SL",
+      "signal_z": -2.182,
+      "hedge_beta": 1.2261,
+      "r": -4.8128
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-30 16:00:00",
+      "entry_time": "2026-07-30 17:00:00",
+      "exit_time": "2026-07-30 17:00:00",
+      "outcome": "SL",
+      "signal_z": -3.059,
+      "hedge_beta": 1.6045,
+      "r": -1.0664
+    },
+    {
+      "pair_spread": "EUR/USD ~ GBP/USD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-30 17:00:00",
+      "entry_time": "2026-07-30 18:00:00",
+      "exit_time": "2026-07-31 16:00:00",
+      "outcome": "SL",
+      "signal_z": -2.649,
+      "hedge_beta": 1.1479,
+      "r": -1.4949
+    },
+    {
+      "pair_spread": "USD/CHF ~ USD/CAD",
+      "side": "LONG_SPREAD",
+      "signal_time": "2026-07-30 18:00:00",
+      "entry_time": "2026-07-30 19:00:00",
+      "exit_time": "2026-07-30 23:00:00",
+      "outcome": "SL",
+      "signal_z": -2.331,
+      "hedge_beta": 1.839,
+      "r": -1.5172
+    }
+  ]
+}
