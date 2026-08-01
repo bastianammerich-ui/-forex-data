@@ -32,5 +32,6 @@ No newly researched strategy is qualified for promotion yet.
 | LAB-006 London H1 Opening-Range Breakout | Intraday/session, high risk | Smoke only | 77 | 0.856 | -6.848 | Rejected in current form; negative after costs and short session sample |
 | LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping, high risk | Smoke only | 52 | 1.077 | +2.506 | Fragile research only; only 2/7 pairs positive and removing AUD/USD or USD/JPY makes result negative |
 | LAB-008 H1 Inside-Bar Trend Breakout | Intraday/breakout, medium risk | Smoke only | 124 | 0.368 | -67.963 | Rejected decisively; no sample-specific repair |
+| LAB-009 H4 Donchian 20/10 Trend Following | Swing/trend, low risk | Smoke only | 73 | 0.885 | -5.346 | Rejected on smoke sample; frozen for future long-history test |
 
 Existing externally developed candidates such as A-V2.2, v3, and Dave/CLS remain outside this new-lab ranking until imported with complete provenance and comparable test records.
