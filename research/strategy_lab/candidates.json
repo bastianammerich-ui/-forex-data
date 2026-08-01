@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-08-01T00:33:58Z",
+  "updated_at_utc": "2026-08-01T01:03:58Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -217,6 +217,25 @@
       },
       "evidence_warning": "Only ~16 calendar days and no stationarity proof; valid 1-sigma-normalized result is decisively negative.",
       "next_action": "Preserve as negative benchmark. Future stat-arb work must test stationarity and use long OOS data before trading."
+    },
+    {
+      "id": "LAB-011",
+      "name": "Asia-Range Liquidity-Sweep Fade",
+      "horizon": "intraday",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 59,
+        "wins": 28,
+        "losses": 31,
+        "win_rate_pct": 47.46,
+        "profit_factor": 0.626,
+        "total_r": -13.211,
+        "max_drawdown_r": 18.433
+      },
+      "evidence_warning": "Only ~16 calendar days and UTC/DST alignment unverified; nevertheless this exact unfiltered sweep hypothesis is negative.",
+      "next_action": "Preserve as negative benchmark. Any key-level or trend-confirmed version must be a separately pre-specified candidate."
     }
   ]
 }
