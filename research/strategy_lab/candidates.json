@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-08-01T01:33:59Z",
+  "updated_at_utc": "2026-08-01T02:03:59Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -143,7 +143,7 @@
         }
       },
       "evidence_warning": "Only 500 M15 bars per pair and about 300 effective post-warmup bars; baseline edge disappears at 2.0 pip cost.",
-      "next_action": "Keep rules frozen; acquire multi-year M15 data before any further decision. Do not drop weak pairs based on this sample.",
+      "next_action": "Keep baseline frozen. Marginal neighbor plateau is encouraging only diagnostically; require multi-year OOS and 2-pip resilience before promotion.",
       "robustness": {
         "audit_id": "LAB-007-R1",
         "first_half_pf": 1.171,
@@ -159,6 +159,20 @@
           "total_r": -2.306
         },
         "decision": "INSUFFICIENT_AND_FRAGILE"
+      },
+      "neighbor_robustness": {
+        "audit_id": "LAB-007-R2",
+        "variants": 7,
+        "variants_pf_above_1": 7,
+        "pf_range": [
+          1.011,
+          1.077
+        ],
+        "positive_pair_range": [
+          2,
+          4
+        ],
+        "decision": "MARGINAL_PLATEAU_BUT_NOT_ROBUST"
       }
     },
     {
