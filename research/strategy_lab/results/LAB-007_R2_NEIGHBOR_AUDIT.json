@@ -1,0 +1,721 @@
+{
+  "audit_id": "LAB-007-R2",
+  "candidate_id": "LAB-007",
+  "audit_type": "predeclared symmetric neighbor-parameter audit",
+  "data_generated_at_utc": "2026-07-31T19:47:54.481Z",
+  "selection_policy": "No best variant is selected; all variants have equal evidential status.",
+  "variants": {
+    "baseline": {
+      "parameters": {
+        "body_min": 0.5,
+        "stop_atr": 1.2,
+        "target_r": 1.8,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 52,
+        "wins": 22,
+        "losses": 30,
+        "win_rate_pct": 42.31,
+        "profit_factor": 1.077,
+        "total_r": 2.506,
+        "max_drawdown_r": 13.334
+      },
+      "first_half": {
+        "trades": 26,
+        "wins": 11,
+        "losses": 15,
+        "win_rate_pct": 42.31,
+        "profit_factor": 1.171,
+        "total_r": 2.689,
+        "max_drawdown_r": 6.314
+      },
+      "second_half": {
+        "trades": 26,
+        "wins": 11,
+        "losses": 15,
+        "win_rate_pct": 42.31,
+        "profit_factor": 0.989,
+        "total_r": -0.184,
+        "max_drawdown_r": 13.334
+      },
+      "positive_pairs": 2,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.562,
+          "total_r": -2.347,
+          "max_drawdown_r": 3.688
+        },
+        "GBP/USD": {
+          "trades": 8,
+          "wins": 3,
+          "losses": 5,
+          "win_rate_pct": 37.5,
+          "profit_factor": 0.936,
+          "total_r": -0.355,
+          "max_drawdown_r": 3.376
+        },
+        "USD/JPY": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 3.185,
+          "total_r": 4.811,
+          "max_drawdown_r": 2.202
+        },
+        "USD/CHF": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.725,
+          "total_r": -1.27,
+          "max_drawdown_r": 2.926
+        },
+        "USD/CAD": {
+          "trades": 10,
+          "wins": 3,
+          "losses": 7,
+          "win_rate_pct": 30.0,
+          "profit_factor": 0.637,
+          "total_r": -2.891,
+          "max_drawdown_r": 4.566
+        },
+        "AUD/USD": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate_pct": 71.43,
+          "profit_factor": 3.163,
+          "total_r": 4.858,
+          "max_drawdown_r": 2.246
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 0.934,
+          "total_r": -0.3,
+          "max_drawdown_r": 4.535
+        }
+      }
+    },
+    "body_0.4": {
+      "parameters": {
+        "body_min": 0.4,
+        "stop_atr": 1.2,
+        "target_r": 1.8,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 54,
+        "wins": 22,
+        "losses": 32,
+        "win_rate_pct": 40.74,
+        "profit_factor": 1.016,
+        "total_r": 0.557,
+        "max_drawdown_r": 13.334
+      },
+      "first_half": {
+        "trades": 27,
+        "wins": 10,
+        "losses": 17,
+        "win_rate_pct": 37.04,
+        "profit_factor": 0.946,
+        "total_r": -0.957,
+        "max_drawdown_r": 7.721
+      },
+      "second_half": {
+        "trades": 27,
+        "wins": 12,
+        "losses": 15,
+        "win_rate_pct": 44.44,
+        "profit_factor": 1.09,
+        "total_r": 1.514,
+        "max_drawdown_r": 13.334
+      },
+      "positive_pairs": 2,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.562,
+          "total_r": -2.347,
+          "max_drawdown_r": 3.688
+        },
+        "GBP/USD": {
+          "trades": 9,
+          "wins": 3,
+          "losses": 6,
+          "win_rate_pct": 33.33,
+          "profit_factor": 0.815,
+          "total_r": -1.181,
+          "max_drawdown_r": 4.201
+        },
+        "USD/JPY": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 3.185,
+          "total_r": 4.811,
+          "max_drawdown_r": 2.202
+        },
+        "USD/CHF": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.725,
+          "total_r": -1.27,
+          "max_drawdown_r": 2.926
+        },
+        "USD/CAD": {
+          "trades": 10,
+          "wins": 3,
+          "losses": 7,
+          "win_rate_pct": 30.0,
+          "profit_factor": 0.637,
+          "total_r": -2.891,
+          "max_drawdown_r": 4.566
+        },
+        "AUD/USD": {
+          "trades": 8,
+          "wins": 5,
+          "losses": 3,
+          "win_rate_pct": 62.5,
+          "profit_factor": 2.106,
+          "total_r": 3.735,
+          "max_drawdown_r": 2.246
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 0.934,
+          "total_r": -0.3,
+          "max_drawdown_r": 4.535
+        }
+      }
+    },
+    "body_0.6": {
+      "parameters": {
+        "body_min": 0.6,
+        "stop_atr": 1.2,
+        "target_r": 1.8,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 43,
+        "wins": 18,
+        "losses": 25,
+        "win_rate_pct": 41.86,
+        "profit_factor": 1.051,
+        "total_r": 1.379,
+        "max_drawdown_r": 12.856
+      },
+      "first_half": {
+        "trades": 21,
+        "wins": 9,
+        "losses": 12,
+        "win_rate_pct": 42.86,
+        "profit_factor": 1.22,
+        "total_r": 2.719,
+        "max_drawdown_r": 5.747
+      },
+      "second_half": {
+        "trades": 22,
+        "wins": 9,
+        "losses": 13,
+        "win_rate_pct": 40.91,
+        "profit_factor": 0.908,
+        "total_r": -1.339,
+        "max_drawdown_r": 12.856
+      },
+      "positive_pairs": 3,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 6,
+          "wins": 2,
+          "losses": 4,
+          "win_rate_pct": 33.33,
+          "profit_factor": 0.713,
+          "total_r": -1.214,
+          "max_drawdown_r": 2.555
+        },
+        "GBP/USD": {
+          "trades": 6,
+          "wins": 3,
+          "losses": 3,
+          "win_rate_pct": 50.0,
+          "profit_factor": 1.574,
+          "total_r": 1.898,
+          "max_drawdown_r": 2.237
+        },
+        "USD/JPY": {
+          "trades": 4,
+          "wins": 3,
+          "losses": 1,
+          "win_rate_pct": 75.0,
+          "profit_factor": 4.711,
+          "total_r": 4.13,
+          "max_drawdown_r": 1.113
+        },
+        "USD/CHF": {
+          "trades": 6,
+          "wins": 2,
+          "losses": 4,
+          "win_rate_pct": 33.33,
+          "profit_factor": 0.969,
+          "total_r": -0.107,
+          "max_drawdown_r": 2.241
+        },
+        "USD/CAD": {
+          "trades": 8,
+          "wins": 1,
+          "losses": 7,
+          "win_rate_pct": 12.5,
+          "profit_factor": 0.212,
+          "total_r": -6.276,
+          "max_drawdown_r": 6.276
+        },
+        "AUD/USD": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 2.44,
+          "total_r": 3.234,
+          "max_drawdown_r": 2.246
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 0.937,
+          "total_r": -0.285,
+          "max_drawdown_r": 4.535
+        }
+      }
+    },
+    "stop_1.0atr": {
+      "parameters": {
+        "body_min": 0.5,
+        "stop_atr": 1.0,
+        "target_r": 1.8,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 52,
+        "wins": 22,
+        "losses": 30,
+        "win_rate_pct": 42.31,
+        "profit_factor": 1.05,
+        "total_r": 1.664,
+        "max_drawdown_r": 12.189
+      },
+      "first_half": {
+        "trades": 26,
+        "wins": 9,
+        "losses": 17,
+        "win_rate_pct": 34.62,
+        "profit_factor": 0.795,
+        "total_r": -3.835,
+        "max_drawdown_r": 12.189
+      },
+      "second_half": {
+        "trades": 26,
+        "wins": 13,
+        "losses": 13,
+        "win_rate_pct": 50.0,
+        "profit_factor": 1.373,
+        "total_r": 5.499,
+        "max_drawdown_r": 10.098
+      },
+      "positive_pairs": 3,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 1.07,
+          "total_r": 0.321,
+          "max_drawdown_r": 2.359
+        },
+        "GBP/USD": {
+          "trades": 8,
+          "wins": 3,
+          "losses": 5,
+          "win_rate_pct": 37.5,
+          "profit_factor": 0.911,
+          "total_r": -0.506,
+          "max_drawdown_r": 3.451
+        },
+        "USD/JPY": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 3.111,
+          "total_r": 4.734,
+          "max_drawdown_r": 2.242
+        },
+        "USD/CHF": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.696,
+          "total_r": -1.444,
+          "max_drawdown_r": 3.071
+        },
+        "USD/CAD": {
+          "trades": 10,
+          "wins": 3,
+          "losses": 7,
+          "win_rate_pct": 30.0,
+          "profit_factor": 0.614,
+          "total_r": -3.15,
+          "max_drawdown_r": 4.679
+        },
+        "AUD/USD": {
+          "trades": 7,
+          "wins": 4,
+          "losses": 3,
+          "win_rate_pct": 57.14,
+          "profit_factor": 1.575,
+          "total_r": 1.99,
+          "max_drawdown_r": 2.295
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 0.939,
+          "total_r": -0.28,
+          "max_drawdown_r": 3.429
+        }
+      }
+    },
+    "stop_1.4atr": {
+      "parameters": {
+        "body_min": 0.5,
+        "stop_atr": 1.4,
+        "target_r": 1.8,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 48,
+        "wins": 20,
+        "losses": 28,
+        "win_rate_pct": 41.67,
+        "profit_factor": 1.011,
+        "total_r": 0.299,
+        "max_drawdown_r": 11.011
+      },
+      "first_half": {
+        "trades": 24,
+        "wins": 9,
+        "losses": 15,
+        "win_rate_pct": 37.5,
+        "profit_factor": 1.018,
+        "total_r": 0.264,
+        "max_drawdown_r": 7.141
+      },
+      "second_half": {
+        "trades": 24,
+        "wins": 11,
+        "losses": 13,
+        "win_rate_pct": 45.83,
+        "profit_factor": 1.003,
+        "total_r": 0.035,
+        "max_drawdown_r": 11.011
+      },
+      "positive_pairs": 3,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.586,
+          "total_r": -2.005,
+          "max_drawdown_r": 3.154
+        },
+        "GBP/USD": {
+          "trades": 8,
+          "wins": 3,
+          "losses": 5,
+          "win_rate_pct": 37.5,
+          "profit_factor": 0.955,
+          "total_r": -0.247,
+          "max_drawdown_r": 3.322
+        },
+        "USD/JPY": {
+          "trades": 5,
+          "wins": 3,
+          "losses": 2,
+          "win_rate_pct": 60.0,
+          "profit_factor": 1.946,
+          "total_r": 2.056,
+          "max_drawdown_r": 2.173
+        },
+        "USD/CHF": {
+          "trades": 6,
+          "wins": 1,
+          "losses": 5,
+          "win_rate_pct": 16.67,
+          "profit_factor": 0.37,
+          "total_r": -2.858,
+          "max_drawdown_r": 4.534
+        },
+        "USD/CAD": {
+          "trades": 9,
+          "wins": 2,
+          "losses": 7,
+          "win_rate_pct": 22.22,
+          "profit_factor": 0.503,
+          "total_r": -3.38,
+          "max_drawdown_r": 4.587
+        },
+        "AUD/USD": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate_pct": 71.43,
+          "profit_factor": 2.936,
+          "total_r": 4.28,
+          "max_drawdown_r": 2.211
+        },
+        "NZD/USD": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 2.117,
+          "total_r": 2.454,
+          "max_drawdown_r": 2.196
+        }
+      }
+    },
+    "target_1.5r": {
+      "parameters": {
+        "body_min": 0.5,
+        "stop_atr": 1.2,
+        "target_r": 1.5,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 52,
+        "wins": 24,
+        "losses": 28,
+        "win_rate_pct": 46.15,
+        "profit_factor": 1.06,
+        "total_r": 1.806,
+        "max_drawdown_r": 10.257
+      },
+      "first_half": {
+        "trades": 26,
+        "wins": 11,
+        "losses": 15,
+        "win_rate_pct": 42.31,
+        "profit_factor": 0.961,
+        "total_r": -0.611,
+        "max_drawdown_r": 7.814
+      },
+      "second_half": {
+        "trades": 26,
+        "wins": 13,
+        "losses": 13,
+        "win_rate_pct": 50.0,
+        "profit_factor": 1.167,
+        "total_r": 2.416,
+        "max_drawdown_r": 10.257
+      },
+      "positive_pairs": 3,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 0.965,
+          "total_r": -0.147,
+          "max_drawdown_r": 2.183
+        },
+        "GBP/USD": {
+          "trades": 8,
+          "wins": 3,
+          "losses": 5,
+          "win_rate_pct": 37.5,
+          "profit_factor": 0.774,
+          "total_r": -1.255,
+          "max_drawdown_r": 3.376
+        },
+        "USD/JPY": {
+          "trades": 6,
+          "wins": 4,
+          "losses": 2,
+          "win_rate_pct": 66.67,
+          "profit_factor": 2.64,
+          "total_r": 3.611,
+          "max_drawdown_r": 2.202
+        },
+        "USD/CHF": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.595,
+          "total_r": -1.87,
+          "max_drawdown_r": 3.226
+        },
+        "USD/CAD": {
+          "trades": 10,
+          "wins": 3,
+          "losses": 7,
+          "win_rate_pct": 30.0,
+          "profit_factor": 0.524,
+          "total_r": -3.791,
+          "max_drawdown_r": 4.566
+        },
+        "AUD/USD": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate_pct": 71.43,
+          "profit_factor": 2.629,
+          "total_r": 3.658,
+          "max_drawdown_r": 2.246
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 4,
+          "losses": 3,
+          "win_rate_pct": 57.14,
+          "profit_factor": 1.476,
+          "total_r": 1.6,
+          "max_drawdown_r": 3.358
+        }
+      }
+    },
+    "target_2.1r": {
+      "parameters": {
+        "body_min": 0.5,
+        "stop_atr": 1.2,
+        "target_r": 2.1,
+        "cost_pips": 1.5
+      },
+      "aggregate": {
+        "trades": 51,
+        "wins": 20,
+        "losses": 31,
+        "win_rate_pct": 39.22,
+        "profit_factor": 1.065,
+        "total_r": 2.118,
+        "max_drawdown_r": 13.951
+      },
+      "first_half": {
+        "trades": 25,
+        "wins": 9,
+        "losses": 16,
+        "win_rate_pct": 36.0,
+        "profit_factor": 1.075,
+        "total_r": 1.183,
+        "max_drawdown_r": 8.738
+      },
+      "second_half": {
+        "trades": 26,
+        "wins": 11,
+        "losses": 15,
+        "win_rate_pct": 42.31,
+        "profit_factor": 1.056,
+        "total_r": 0.934,
+        "max_drawdown_r": 13.951
+      },
+      "positive_pairs": 4,
+      "per_pair": {
+        "EUR/USD": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.618,
+          "total_r": -2.047,
+          "max_drawdown_r": 3.388
+        },
+        "GBP/USD": {
+          "trades": 8,
+          "wins": 3,
+          "losses": 5,
+          "win_rate_pct": 37.5,
+          "profit_factor": 1.098,
+          "total_r": 0.545,
+          "max_drawdown_r": 3.376
+        },
+        "USD/JPY": {
+          "trades": 5,
+          "wins": 3,
+          "losses": 2,
+          "win_rate_pct": 60.0,
+          "profit_factor": 2.241,
+          "total_r": 2.732,
+          "max_drawdown_r": 2.202
+        },
+        "USD/CHF": {
+          "trades": 7,
+          "wins": 2,
+          "losses": 5,
+          "win_rate_pct": 28.57,
+          "profit_factor": 0.855,
+          "total_r": -0.67,
+          "max_drawdown_r": 2.626
+        },
+        "USD/CAD": {
+          "trades": 10,
+          "wins": 2,
+          "losses": 8,
+          "win_rate_pct": 20.0,
+          "profit_factor": 0.495,
+          "total_r": -4.068,
+          "max_drawdown_r": 5.81
+        },
+        "AUD/USD": {
+          "trades": 7,
+          "wins": 5,
+          "losses": 2,
+          "win_rate_pct": 71.43,
+          "profit_factor": 3.372,
+          "total_r": 5.326,
+          "max_drawdown_r": 2.246
+        },
+        "NZD/USD": {
+          "trades": 7,
+          "wins": 3,
+          "losses": 4,
+          "win_rate_pct": 42.86,
+          "profit_factor": 1.066,
+          "total_r": 0.3,
+          "max_drawdown_r": 4.535
+        }
+      }
+    }
+  },
+  "variants_pf_above_1": 7,
+  "total_variants": 7,
+  "decision": "ROBUSTNESS_NOT_ESTABLISHED",
+  "reason": "Neighbor results are diagnostic only and the underlying sample remains about five trading days with no true OOS period.",
+  "next_action": "Do not modify LAB-007. Repeat the locked baseline and this exact audit on multi-year independent M15 data."
+}
