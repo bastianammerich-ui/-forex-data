@@ -20,7 +20,7 @@ No newly researched strategy is qualified for promotion yet.
 
 | Rank | Candidate | Horizon | Status | Evidence |
 |---:|---|---|---|---|
-| — | LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping | Fragile research only, not qualified | Only 2/7 pairs positive; second half PF 0.989; fails 2.0-pip stress |
+| — | LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping | Fragile research only, not qualified | All 7 neighbors PF 1.011–1.077, but only 2–4/7 pairs positive and 2.0-pip stress fails |
 
 ## Rejected / insufficient evidence
 
@@ -30,7 +30,7 @@ No newly researched strategy is qualified for promotion yet.
 | LAB-004 Weekly Cross-Sectional Currency Strength Portfolio | Swing/portfolio, medium risk | Smoke only | 40 | 0.658 | -1.852 | Rejected in current form; low DD but no positive edge after costs |
 | LAB-005 H4 Regime-Filtered Bollinger Mean Reversion | Intraday/swing, medium risk | Smoke only | 8 | 0.700 | -1.558 | Rejected/insufficient; only eight signals and no positive edge |
 | LAB-006 London H1 Opening-Range Breakout | Intraday/session, high risk | Smoke only | 77 | 0.856 | -6.848 | Rejected in current form; negative after costs and short session sample |
-| LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping, high risk | Smoke only | 52 | 1.077 | +2.506 | Fragile research only; only 2/7 pairs positive and removing AUD/USD or USD/JPY makes result negative |
+| LAB-007 M15 EMA-Regime Pullback Reclaim | Scalping, high risk | Smoke only | 52 | 1.077 | +2.506 | Fragile research only; marginal neighbor plateau, but pair concentration and 2.0-pip failure remain |
 | LAB-008 H1 Inside-Bar Trend Breakout | Intraday/breakout, medium risk | Smoke only | 124 | 0.368 | -67.963 | Rejected decisively; no sample-specific repair |
 | LAB-009 H4 Donchian 20/10 Trend Following | Swing/trend, low risk | Smoke only | 73 | 0.885 | -5.346 | Rejected on smoke sample; frozen for future long-history test |
 | LAB-010 H1 Rolling-Hedge Pair Mean Reversion | Relative value/stat-arb, medium risk | Smoke only | 45 | 0.254 | -64.320 | Rejected decisively after stable 1-sigma risk normalization |
