@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at_utc": "2026-08-01T01:03:58Z",
+  "updated_at_utc": "2026-08-01T01:33:59Z",
   "candidates": [
     {
       "id": "LAB-001",
@@ -236,6 +236,25 @@
       },
       "evidence_warning": "Only ~16 calendar days and UTC/DST alignment unverified; nevertheless this exact unfiltered sweep hypothesis is negative.",
       "next_action": "Preserve as negative benchmark. Any key-level or trend-confirmed version must be a separately pre-specified candidate."
+    },
+    {
+      "id": "LAB-012",
+      "name": "H1 Keltner Trend Expansion",
+      "horizon": "intraday",
+      "risk_profile": "medium",
+      "status": "REJECTED",
+      "test_class": "SMOKE_TEST_ONLY",
+      "aggregate": {
+        "trades": 62,
+        "wins": 15,
+        "losses": 47,
+        "win_rate_pct": 24.19,
+        "profit_factor": 0.63,
+        "total_r": -16.623,
+        "max_drawdown_r": 37.313
+      },
+      "evidence_warning": "Only ~16 calendar days; exact formulation nevertheless has a materially negative smoke result.",
+      "next_action": "Preserve as negative benchmark. Do not tune channel width or ADX threshold on this sample."
     }
   ]
 }
