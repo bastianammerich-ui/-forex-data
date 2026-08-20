@@ -3,7 +3,7 @@
   "schema_version": "2.0",
   "source": "Twelve Data via Cloudflare Worker",
   "timezone": "Europe/Berlin",
-  "generated_at_utc": "2026-08-20T16:17:27.702Z",
+  "generated_at_utc": "2026-08-20T16:32:29.454Z",
   "quality": {
     "rejected_candles": 1,
     "incomplete_candles": 28,
@@ -44,7 +44,7 @@
   "market": {
     "15min": {
       "available": true,
-      "updated_at_utc": "2026-08-20T16:17:27.491Z",
+      "updated_at_utc": "2026-08-20T16:32:29.205Z",
       "age_seconds": 0,
       "stale": false,
       "pairs": {
@@ -62,12 +62,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 1.1674,
+              "high": 1.1674,
+              "low": 1.1672,
+              "close": 1.16723,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 1.16758,
-              "high": 1.16758,
-              "low": 1.16745,
-              "close": 1.16746,
-              "complete": false
+              "high": 1.16768,
+              "low": 1.16726,
+              "close": 1.16742,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -4052,14 +4060,6 @@
               "low": 1.15685,
               "close": 1.15704,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 1.15706,
-              "high": 1.1572,
-              "low": 1.15662,
-              "close": 1.15685,
-              "complete": true
             }
           ]
         },
@@ -4077,12 +4077,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 1.36291,
+              "high": 1.36291,
+              "low": 1.36275,
+              "close": 1.36276,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 1.36327,
-              "high": 1.36327,
-              "low": 1.36316,
-              "close": 1.36317,
-              "complete": false
+              "high": 1.36329,
+              "low": 1.36281,
+              "close": 1.36285,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -8067,14 +8075,6 @@
               "low": 1.35305,
               "close": 1.35329,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 1.35329,
-              "high": 1.3534,
-              "low": 1.35313,
-              "close": 1.35314,
-              "complete": true
             }
           ]
         },
@@ -8092,12 +8092,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 159.05451,
+              "high": 159.08911,
+              "low": 159.05451,
+              "close": 159.08478,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 158.94787,
-              "high": 158.97847,
+              "high": 159.07765,
               "low": 158.94602,
-              "close": 158.97119,
-              "complete": false
+              "close": 159.0709,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -12082,14 +12090,6 @@
               "low": 159.29896,
               "close": 159.3241,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 159.32051,
-              "high": 159.33549,
-              "low": 159.28883,
-              "close": 159.2927,
-              "complete": true
             }
           ]
         },
@@ -12107,12 +12107,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 0.80033,
+              "high": 0.80033,
+              "low": 0.80027,
+              "close": 0.8003,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 0.80017,
-              "high": 0.80029,
-              "low": 0.80017,
-              "close": 0.80027,
-              "complete": false
+              "high": 0.80036,
+              "low": 0.79995,
+              "close": 0.80035,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -16097,14 +16105,6 @@
               "low": 0.81327,
               "close": 0.81328,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 0.81325,
-              "high": 0.81346,
-              "low": 0.81321,
-              "close": 0.81342,
-              "complete": true
             }
           ]
         },
@@ -16122,12 +16122,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 1.37887,
+              "high": 1.37897,
+              "low": 1.37887,
+              "close": 1.37893,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 1.37856,
-              "high": 1.37868,
-              "low": 1.37856,
-              "close": 1.37865,
-              "complete": false
+              "high": 1.37894,
+              "low": 1.37846,
+              "close": 1.37891,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -20112,14 +20120,6 @@
               "low": 1.38734,
               "close": 1.38738,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 1.38733,
-              "high": 1.38778,
-              "low": 1.38729,
-              "close": 1.38773,
-              "complete": true
             }
           ]
         },
@@ -20137,12 +20137,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 0.71135,
+              "high": 0.71138,
+              "low": 0.7113,
+              "close": 0.71137,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 0.71164,
-              "high": 0.71164,
-              "low": 0.71156,
-              "close": 0.71157,
-              "complete": false
+              "high": 0.71169,
+              "low": 0.71132,
+              "close": 0.71134,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -24127,14 +24135,6 @@
               "low": 0.70837,
               "close": 0.70847,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 0.70846,
-              "high": 0.70851,
-              "low": 0.70837,
-              "close": 0.70838,
-              "complete": true
             }
           ]
         },
@@ -24152,12 +24152,20 @@
           "data_warnings": [],
           "candles": [
             {
+              "datetime": "2026-08-20 18:30:00",
+              "open": 0.59423,
+              "high": 0.59423,
+              "low": 0.59415,
+              "close": 0.59421,
+              "complete": false
+            },
+            {
               "datetime": "2026-08-20 18:15:00",
               "open": 0.59442,
-              "high": 0.59442,
-              "low": 0.59435,
-              "close": 0.59436,
-              "complete": false
+              "high": 0.59449,
+              "low": 0.59417,
+              "close": 0.59424,
+              "complete": true
             },
             {
               "datetime": "2026-08-20 18:00:00",
@@ -28142,14 +28150,6 @@
               "low": 0.58912,
               "close": 0.58918,
               "complete": true
-            },
-            {
-              "datetime": "2026-08-15 13:30:00",
-              "open": 0.58917,
-              "high": 0.58924,
-              "low": 0.58916,
-              "close": 0.58918,
-              "complete": true
             }
           ]
         }
@@ -28158,7 +28158,7 @@
     "1h": {
       "available": true,
       "updated_at_utc": "2026-08-20T16:02:31.142Z",
-      "age_seconds": 896,
+      "age_seconds": 1798,
       "stale": false,
       "pairs": {
         "EUR/USD": {
@@ -50671,7 +50671,7 @@
     "4h": {
       "available": true,
       "updated_at_utc": "2026-08-20T16:04:28.141Z",
-      "age_seconds": 779,
+      "age_seconds": 1681,
       "stale": false,
       "pairs": {
         "EUR/USD": {
@@ -67584,7 +67584,7 @@
     "1day": {
       "available": true,
       "updated_at_utc": "2026-08-20T00:06:28.140Z",
-      "age_seconds": 58259,
+      "age_seconds": 59161,
       "stale": false,
       "pairs": {
         "EUR/USD": {
